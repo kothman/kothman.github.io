@@ -82,6 +82,10 @@ img {
 	width: 40px;
 }
 
+.email {
+    margin-top: -10px;
+}
+
 /* helper classes */
 
 .rounded {
