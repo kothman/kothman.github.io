@@ -163,7 +163,7 @@ img {
 
 /* Fix varying card content heights */
 .website-card .card-content {
-    height: 100px;
+    min-height: 100px;
 }
 
 
