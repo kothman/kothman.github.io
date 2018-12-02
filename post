@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# @todo Should make sure file doesn't exist and one argument has been supplied
+
+title=$*
+filename=$(date +%F-${title}.md)
+path="_posts/${filename}"
+echo $path
+touch $path
+echo "---" >> $path
+echo "layout: default" >> $path
+echo "title: ${title}" >> $path
+echo "excerpt_separator: <!--more-->" >> $path
+echo "---" >> $path
+emacs $path

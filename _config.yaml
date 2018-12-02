@@ -1,0 +1,4 @@
+defaults:
+  profile: true
+  strict_front-matter: true
+  layout: "default.html"
