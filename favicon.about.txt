@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Seaweed Script
+- Font Author: Copyright (c) 2012 by Font Diner, Inc DBA Neapolitan (diner@fontdiner.com) with Reseved Font Name "Seaweed Script"
+- Font Source: http://fonts.gstatic.com/s/seaweedscript/v15/bx6cNx6Tne2pxOATYE8C_Rsoe0WJ-KcGVbLW.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
