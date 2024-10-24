@@ -1,0 +1,8 @@
+#+SETUPFILE: html.setup
+:INFO-DRAWER:
+This should be hidden...
+:END:
+  
+*** Helpful Links
+- [[https://orgmode.org/manual/Export-Settings.html][Org-Mode Export Settings]]
+- [[https://orgmode.org/manual/HTML-specific-export-settings.html][HTML Specific Export Settings]]
