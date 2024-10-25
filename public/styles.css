@@ -1,5 +1,6 @@
 :root {
-    --main-bg-color: white;
+    --main-bg-color: whitesmoke;
+    --other-bg-color: black;
     --main-border-color: black;
     --main-text-color: black;
     
@@ -11,13 +12,17 @@
 
 body {
     margin: 0;
-    color: var(--main-text-color);    
+    color: var(--main-text-color);
+    min-height: 100dvh;
+    background-color: var(--main-bg-color);
+    font-family: Verdana, Arial, sans-serif;
     header {
 	container-type: inline-size;
 	container-name: header;
 	padding: 1rem;
 	border-bottom: 1px solid var(--main-border-color);
     }
+    /* Site Navigation */
     nav {
 	ul {
 	    list-style: none;
@@ -27,13 +32,43 @@ body {
 	    flex-direction: row;
 	    align-items: flex-end;
 	    justify-content: space-between;
+	    /* The first list item contains the title and subtitle */
+	    li:first-child {
+		display: flex;
+		flex-direction: column;
+		h1 {
+		    font-size: 2rem;
+		    line-height: 2rem;
+		}
+		h3 {
+		    font-weight: normal;
+		}
+	    }
+	    /* Everything besides the first list item is a nav-item */
 	    li:not(:first-child) {
 		margin-left: 1rem;
 		list-style: none;
 		display: flex;
 		flex-direction: row;
 		position: relative;
+		font-style: italic;
+		height: 2.15rem;
 		a, a:visited, a:active {
+		    min-width: 5rem;
+		    position: relative;
+		    display: flex;
+		    flex-direction: row;
+		    line-height: 2rem;
+		    height: 2.15rem;
+		    &::before {
+			content: '';
+			position: relative;
+			display: inline-flex;
+			margin-right: .5rem;
+			border-left: 2px solid var(--main-border-color);
+			height: 100%;
+			
+		    }
 		    &::after {
 			position: absolute;
 			content: ' ';
@@ -53,6 +88,8 @@ body {
 	    a, a:visited, a:active {
 		text-decoration: none;
 		color: var(--main-text-color);
+		display: flex;
+		flex-direction: column;
 	    }
 	}
 	h1, h2, h3, h4, h5, h6 {
@@ -76,6 +113,7 @@ body {
 	}
 	li:not(:first-child) {
 	    margin-left: 0;
+	    margin-bottom: .5rem;
 	}
     }
 }
