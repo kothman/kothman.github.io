@@ -2,7 +2,16 @@
 :INFO-DRAWER:
 This should be hidden...
 :END:
-  
-*** Helpful Links
+
+* About Me
+I'm a musician, programmer, and avid learner. Most of my free time is
+spent with my friends and family, or working on whatever project I'm
+caught up in at any given moment.
+
+* 
+
+* Resources
+** Technical
+*** Org-Mode
 - [[https://orgmode.org/manual/Export-Settings.html][Org-Mode Export Settings]]
 - [[https://orgmode.org/manual/HTML-specific-export-settings.html][HTML Specific Export Settings]]
