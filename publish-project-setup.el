@@ -4,6 +4,10 @@
 ;;; Org-Mode Export - Publish
 (require 'ox-publish)
 
+(defvar directory-name "static-streamline"
+  "The directory name this project resides in, to be used by helper
+Scripts in determining if the saved-buffer should trigger recompilation.")
+
 ;;; Helper functions for publishing the project
 (defun my-org-publish ()
   "My function for publishing org projects as HTML."
@@ -13,6 +17,32 @@
   "My function for force-publishing org projects as HTML."
   (interactive)
   (org-publish-project "org" t))
+
+(defun contains (key list)
+  "Return t if key is in list."
+       (let ((current (car list)))
+	 ;; If the current item is nil or matches the key,
+	 ;; then it can be returned either way.
+	 (if (or (equal key current) (equal nil current))
+	     current
+	     ;; If the current item isn't the key, and isn't nil...
+	     ;; recurse into the list
+	   (contains key (cdr list)))))
+
+(defun my-org-after-save-hook ()
+  "An after-save hook to publish the org files."
+  ;; set list-of-path-parts to a list of directory names (and ending
+  ;;;; with the file name)
+  (let ((list-of-path-parts (split-string (buffer-file-name) "\\/")))
+    ;; If and only if the list contains the our project key, the
+    ;; directory name
+    (when (contains directory-name list-of-path-parts)
+      ;; publish the org project
+      (org-publish-project "org"))))
+;; @todo change this to only add-hook if not in list
+(setq after-save-hook 'my-org-after-save-hook)
+
+
 
 ;;; Define some kbd shortcuts for publishing the project
 (keymap-global-set "C-c o P" 'my-org-publish-force)
