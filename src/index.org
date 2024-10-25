@@ -8,7 +8,15 @@ I'm a musician, programmer, and avid learner. Most of my free time is
 spent with my friends and family, or working on whatever project I'm
 caught up in at any given moment.
 
-* 
+* Projects
+** Kalamazoo Valley Community College
+*** CIS 170
+**** Static Web Development (HTML, CSS, JS) - Spring 2024
+- [[/CIS-170/Project%201/][Project 1]] :: A single-page static website meant to demonstrate my understanding of HTML.
+- [[/CIS-170/Project%202/][Project 2]] :: Description
+- [[/CIS-170/Project%203/][Project 3]] :: Description
+- [[/CIS-170/Project%204/][Project 4]] :: Description
+* Contact
 
 * Resources
 ** Technical

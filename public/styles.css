@@ -1,6 +1,6 @@
 :root {
     --main-bg-color: whitesmoke;
-    --other-bg-color: black;
+    --other-bg-color: rgb(200, 244, 244);
     --main-border-color: black;
     --main-text-color: black;
 }
@@ -15,6 +15,14 @@ body {
     min-height: 100dvh;
     background-color: var(--main-bg-color);
     font-family: Verdana, Arial, sans-serif;
+    p {
+	margin-top: 0;
+	margin-bottom: 1rem;
+    }
+    div {
+	display: flex;
+	flex-direction: column;
+    }
     header {
 	container-type: inline-size;
 	container-name: header;
@@ -100,6 +108,60 @@ body {
     #content {
 	padding: 2rem;
 	container-type: inline-size;
+	dl {
+	    /* margin-top: 0; */
+	    dd, dt {
+		border-left: 4px solid slategrey;
+		border-right: 1px solid var(--main-border-color);
+		padding-right: 1rem;
+		padding-bottom: 1rem;
+		transition: .2s ease-in-out;
+		&:hover, &:active, &:hover + dd , &:active + dd {
+		    background: var(--other-bg-color);
+		}
+	    }
+	    dt {
+		padding-left: 1rem;
+		padding-top: 1rem;
+		border-top: 1px solid var(--main-border-color);
+		&:has(+ dd:hover, dd:active) {
+		    background: var(--other-bg-color);
+		}
+		a, a:visited {
+		    transition: all .2s ease-in-out;
+		    color: darkblue;
+		    &:hover, &:active {
+			color: black;
+			text-shadow: 1px 1px 4px 8px black;
+			
+		    }
+		}
+	    }
+	    dd {
+		margin-left: 0;
+		padding-left: 2rem;
+		border-bottom: 1px solid var(--main-border-color);
+		&:not(:last-child) {
+		    margin-bottom: 1rem;
+		}
+	    }
+	}
+	& > div:not(:last-child) {
+	    margin-bottom: 1rem;
+	}
+	h1, h2, h3, h4, h5, h6 {
+	    margin-top: 0;
+	}
+	h2 {
+	    border-bottom: 1px solid var(--main-border-color);
+	}
+	h3 {
+	    margin-bottom: 0;
+	}
+	h4, h5, h6 {
+	    font-weight: normal;
+	    margin-bottom: 0;
+	}
     }
 }
 
