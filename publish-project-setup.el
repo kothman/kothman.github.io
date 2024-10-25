@@ -1,7 +1,5 @@
 ;;; -*- lexical-binding: t -*-
 ;;; Org-Mode Export - Publish
-;;; -*- lexical-binding: t -*-
-;;; Org-Mode Export - Publish
 (require 'ox-publish)
 
 (defvar directory-name "static-streamline"
@@ -21,6 +19,7 @@ Scripts in determining if the saved-buffer should trigger recompilation.")
 (defun contains (key list)
   "Return t if key is in list."
        (let ((current (car list)))
+	 (message "current: %s\nrest: %s\nkey: %s" current list key)
 	 ;; If the current item is nil or matches the key,
 	 ;; then it can be returned either way.
 	 (if (or (equal key current) (equal nil current))
@@ -40,8 +39,7 @@ Scripts in determining if the saved-buffer should trigger recompilation.")
       ;; publish the org project
       (org-publish-project "org"))))
 ;; @todo change this to only add-hook if not in list
-(setq after-save-hook 'my-org-after-save-hook)
-
+(add-hook 'after-save-hook 'my-org-after-save-hook)
 
 
 ;;; Define some kbd shortcuts for publishing the project
