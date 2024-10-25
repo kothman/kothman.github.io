@@ -12,14 +12,9 @@ caught up in at any given moment.
 ** Kalamazoo Valley Community College
 *** CIS 170
 **** Static Web Development (HTML, CSS, JS) - Spring 2024
-- [[/CIS-170/Project%201/][Project 1]] :: A single-page static website meant to demonstrate my understanding of HTML.
-- [[/CIS-170/Project%202/][Project 2]] :: Description
-- [[/CIS-170/Project%203/][Project 3]] :: Description
-- [[/CIS-170/Project%204/][Project 4]] :: Description
-* Contact
+- [[./CIS-170/Project%201/][Project 1]] :: A single-page static website meant to demonstrate my understanding of HTML.
+- [[./CIS-170/Project%202/][Project 2]] :: Description
+- [[./CIS-170/Project%203/][Project 3]] :: Description
+- [[./CIS-170/Project%204/][Project 4]] :: Description
 
-* Resources
-** Technical
-*** Org-Mode
-- [[https://orgmode.org/manual/Export-Settings.html][Org-Mode Export Settings]]
-- [[https://orgmode.org/manual/HTML-specific-export-settings.html][HTML Specific Export Settings]]
+* Contact
