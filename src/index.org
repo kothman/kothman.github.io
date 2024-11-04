@@ -1,7 +1,4 @@
 #+SETUPFILE: html.setup
-:INFO-DRAWER:
-This should be hidden...
-:END:
 
 * About Me
 I'm a musician, programmer, and avid learner. Most of my free time is
@@ -10,11 +7,37 @@ caught up in at any given moment.
 
 * Projects
 ** Kalamazoo Valley Community College
-*** CIS 170
-**** Static Web Development (HTML, CSS, JS) - Spring 2024
-- [[./CIS-170/Project%201/][Project 1]] :: A single-page static website meant to demonstrate my understanding of HTML.
-- [[./CIS-170/Project%202/][Project 2]] :: Description
-- [[./CIS-170/Project%203/][Project 3]] :: Description
-- [[./CIS-170/Project%204/][Project 4]] :: Description
+*** Static Web Development / CIS 170
+**** /Spring 2024/
+- [[./CIS-170/Project%201/][Project 1@@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: A
+  single-page static website meant to demonstrate my understanding of
+  HTML.
+- [[./CIS-170/Project%202/kothman.2a.html][Project 2 (a)@@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: This
+  was the first project of a two part assignment where we used tables
+  to format static information on a web page.
+- [[./CIS-170/Project%202/kothman.2b.html][Project 2 (b)@@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: In
+  part two, I used a table to showcase my experience processing animal
+  bones through decomposition, cleaning, and whitening.
+- [[./CIS-170/Project%203/][Project 3@@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: For
+  our form assignment, I created a spammy (but somewhat well-styled)
+  form that pressures the user to fill it out as quickly as possible,
+  while also providing a mildly annoying user experience. I spent
+  extra time working on CSS tweaks, and implementing a countdown timer
+  in JavaScript.
+- [[./CIS-170/Project%204/][Project 4@@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: The
+  goal for our final web page was to create a portfolio site with
+  mobile-responsiveness at the forefront. I enjoyed being somewhat
+  meticulous with crafting my CSS especially, including the use of
+  @media queries. It wasn't until working on this page you're
+  currently reading that I figured out how to use @container queries
+  for more sensible mobile breakpoints.
+
+** Personal Projects
+*** This website 🙂
+**** /Fall 2024/
+
+- [[https://kothman.github.io][Portfolio Website@@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: This
+  site was built using a customized Emacs workflow to publish Org-Mode
+  files into static webpages.
 
 * Contact
