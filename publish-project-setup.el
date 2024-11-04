@@ -2,6 +2,7 @@
 ;;; Org-Mode Export - Publish
 (require 'ox-publish)
 
+;;; Define what directory name should be looked for during post-save hook
 (defvar directory-name "static-streamline"
   "The directory name this project resides in, to be used by helper
 Scripts in determining if the saved-buffer should trigger recompilation.")
@@ -11,15 +12,17 @@ Scripts in determining if the saved-buffer should trigger recompilation.")
   "My function for publishing org projects as HTML."
   (interactive)
   (org-publish-project "org"))
+;;; Force publish, shouldn't need to use this
 (defun my-org-publish-force ()
   "My function for force-publishing org projects as HTML."
   (interactive)
   (org-publish-project "org" t))
 
+;;; Helper function to see if key in list. Isn't there already some
+;;; standard elisp function that already does this?
 (defun contains (key list)
   "Return t if key is in list."
        (let ((current (car list)))
-	 (message "current: %s\nrest: %s\nkey: %s" current list key)
 	 ;; If the current item is nil or matches the key,
 	 ;; then it can be returned either way.
 	 (if (or (equal key current) (equal nil current))
@@ -28,6 +31,8 @@ Scripts in determining if the saved-buffer should trigger recompilation.")
 	     ;; recurse into the list
 	   (contains key (cdr list)))))
 
+;;; My hook to export org documents as hooks if the saved file
+;;; is in the "directory-name" directory.
 (defun my-org-after-save-hook ()
   "An after-save hook to publish the org files."
   ;; set list-of-path-parts to a list of directory names (and ending
@@ -45,6 +50,7 @@ Scripts in determining if the saved-buffer should trigger recompilation.")
 ;;; Define some kbd shortcuts for publishing the project
 (keymap-global-set "C-c o P" 'my-org-publish-force)
 (keymap-global-set "C-c o p" 'my-org-publish)
+
 
 (defvar my-org-index-nav
   '(about projects contact))
@@ -101,7 +107,9 @@ Scripts in determining if the saved-buffer should trigger recompilation.")
 ;;; Customize Postamble
 (setq org-html-postamble nil)
 ;;; Include stylesheet in the head
-(setq org-html-head "<link rel=\"stylesheet\" href=\"styles.css\">")
+(setq org-html-head (concat
+		     "<link rel=\"stylesheet\" href=\"styles.css\">\n"p
+		     "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css\">"))
 (setq org-html-head-extra nil)
 ;;; No JavaScript for now
 (setq org-html-head-include-scripts nil)
@@ -119,6 +127,55 @@ Scripts in determining if the saved-buffer should trigger recompilation.")
 (setq org-html-container-element "div")
 ;;; Defaults to content, but I like it to be obvious
 (setq org-html-content-class "content")
+
+
+
+;;;;;; Redefine org-html-[ELEMENT] for each one we need to use differently
+;; get rid of some compiler warnings
+(defun org-html-format-list-item (contents type checkbox info
+					   &optional term-counter-id
+					   headline)
+  "Format a list item into HTML.
+CONTENTS is the item contents.  TYPE is one of symbols `ordered',
+`unordered', or `descriptive'.  CHECKBOX checkbox type is nil or one of
+symbols `on', `off', or `trans'.   INFO is the info plist."
+  (let ((class (if checkbox
+		   (format " class=\"%s\""
+			   (symbol-name checkbox)) ""))
+	(checkbox (concat (org-html-checkbox checkbox info)
+			  (and checkbox " ")))
+	(br (org-html-close-tag "br" nil info))
+	(extra-newline (if (and (org-string-nw-p contents) headline) "\n" "")))
+    (concat
+     (pcase type
+       (`ordered
+	(let* ((counter term-counter-id)
+	       (extra (if counter (format " value=\"%s\"" counter) "")))
+	  (concat
+	   (format "<li%s%s>" class extra)
+	   (when headline (concat headline br)))))
+       (`unordered
+	(let* ((id term-counter-id)
+	       (extra (if id (format " id=\"%s\"" id) "")))
+	  (concat
+	   (format "<li%s%s>" class extra)
+	   (when headline (concat headline br)))))
+       (`descriptive
+	(let* ((term term-counter-id))
+	  (setq term (or term "(no term)"))
+	  ;; Check-boxes in descriptive lists are associated to tag.
+	  (concat "<div class=\"description-list-item\">"
+		  (format "<dt%s>%s</dt>"
+			  class (concat checkbox term))
+		  "<dd>"))))
+     (unless (eq type 'descriptive) checkbox)
+     extra-newline
+     (and (org-string-nw-p contents) (org-trim contents))
+     extra-newline
+     (pcase type
+       (`ordered "</li>")
+       (`unordered "</li>")
+       (`descriptive "</dd></div>")))))
 
 ;;;;;;
 ;;;;;; Setup org projects for each export type
