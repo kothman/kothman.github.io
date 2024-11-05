@@ -32,12 +32,5 @@ caught up in at any given moment.
   currently reading that I figured out how to use @container queries
   for more sensible mobile breakpoints.
 
-** Personal Projects
-*** This website 🙂
-**** /Fall 2024/
-
-- [[https://kothman.github.io][Portfolio Website@@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: This
-  site was built using a customized Emacs workflow to publish Org-Mode
-  files into static webpages.
-
 * Contact
+Get in touch!
