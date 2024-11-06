@@ -142,7 +142,6 @@ body {
 	padding: 2rem;
 	container-type: inline-size;
 	max-width: 100%;
-	width: 35rem;
 	align-items: center;
 	
 	dl {
@@ -152,7 +151,7 @@ body {
 	    flex-wrap: wrap;
 	    row-gap: 2rem;
 	    column-gap: 2rem;
-	    justify-content: left;
+	    justify-content: space-around;
 	    .description-list-item {
 		max-width: 25rem;
 		border: 1px solid var(--description-list-item-border-color);
@@ -197,6 +196,7 @@ body {
 	}
 	& > div {
 	    width: 100%;
+	    max-width: 55rem;
 	}
 	& > div:not(:last-child) {
 	    margin-bottom: 1rem;
@@ -253,9 +253,17 @@ body {
 	    width: 100%;
 	    max-width: 100%;
 	    padding: 1rem;
+	    /* Content Sections that aren't last */
 	    & > div:not(:last-child) {
 		margin-bottom: 0;
 	    }
+	    /* all Content Sections */
+	    & > div {
+		p:not(:last-child) {
+		    margin-bottom: .5rem;
+		}
+	    }
+	    
 	    dl {
 		row-gap: 0;
 		column-gap: 0;
