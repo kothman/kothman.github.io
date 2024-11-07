@@ -1,3 +1,5 @@
 #+SETUPFILE: ../html.setup
 
 * Resources
+** Michigan
+- [[https://www.state.mi.us/dit/][State of Michigan Contact Directory]]
