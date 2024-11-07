@@ -17,6 +17,11 @@
   "The directory name this project resides in, to be used by helper.
 Scripts in determining if the saved-buffer should trigger recompilation.")
 
+
+(defvar base-url)
+(setq base-url "file:///home/kothman/code/static-streamline/public")
+;;;(setq base-url "https://kothman.github.io")
+
 ;;; Helper functions for publishing the project
 (defun my-org-publish ()
   "My function for publishing org projects as HTML."
@@ -31,7 +36,7 @@ Scripts in determining if the saved-buffer should trigger recompilation.")
 ;;; Helper function to see if key in list. Isn't there already some
 ;;; standard elisp function that already does this?
 (defun contains (key list)
-  "Return t if key is in list."
+  "Return t if KEY is in LIST."
        (let ((current (car list)))
 	 ;; If the current item is nil or matches the key,
 	 ;; then it can be returned either way.
@@ -76,7 +81,7 @@ Scripts in determining if the saved-buffer should trigger recompilation.")
 (defun my-org-build-navigation-html (navlist)
   "Get the html for the nav section, built from NAVLIST."
   (let ((formatted-item nil)
-	(inside-html "<li><a href=\"#title\"><h1>%t</h1><h3>%s</h3></a>"))
+	(inside-html (concat "<li><a href=\"" base-url "\"><h1>%t</h1><h3>%s</h3></a>")))
     
     (dolist
 	;;; (list-item/element, list to loop through,
@@ -117,10 +122,13 @@ Scripts in determining if the saved-buffer should trigger recompilation.")
 ;;; Customize Postamble
 (setq org-html-postamble nil)
 ;;; Include stylesheet in the head
-(setq org-html-head (concat
+(setq org-html-head (concat "<link rel=\"stylesheet\" href=\"" base-url "/styles.css\">"))
+(setq org-html-head-extra "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css\">")
+(defvar org-html-head-develop nil "The development stylesheet headers to use when testing locally.")
+(setq org-html-head-develop (concat
 		     "<link rel=\"stylesheet\" href=\"/styles.css\">\n"
 		     "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css\">"))
-(setq org-html-head-extra nil)
+
 ;;; No JavaScript for now
 (setq org-html-head-include-scripts nil)
 ;;; Set our own styles in org-html-head per spec
@@ -152,3 +160,5 @@ Scripts in determining if the saved-buffer should trigger recompilation.")
 	 :publishing-function org-publish-attachment)
 	("org" :components ("org-notes" "org-static"))
 	))
+
+(my-org-publish-force)
