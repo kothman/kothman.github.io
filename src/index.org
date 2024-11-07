@@ -17,6 +17,7 @@ sometimes smaller nonprofits) struggling to make use of technology
 ** Kalamazoo Valley Community College
 *** Static Web Development / CIS 170
 **** /Spring 2024/
+#+ATTR_HTML: :class card-descriptive-list
 - [[./CIS-170/Project%201/][Gay Panic @@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: A single-page
   static website meant to demonstrate my understanding of HTML.
 - [[./CIS-170/Project%202/kothman.2a.html][Example Table @@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: This was
