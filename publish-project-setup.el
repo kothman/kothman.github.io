@@ -1,13 +1,20 @@
-;;; -*- lexical-binding: t -*-
+;;; package --- Summary: Custom OX-HTML Publisher -*- lexical-binding: t -*-
+;;; Commentary:
+
+;;; This file loads the modified ox-html org publisher, to make publishing
+;;; org docs as HTML much easier and prettier.
+
 ;;; Org-Mode Export - Publish
 (require 'ox-publish)
 (require 'ox-html)
 
+;;; Code:
 (load-file "./ox-html.elc")
+
 
 ;;; Define what directory name should be looked for during post-save hook
 (defvar directory-name "static-streamline"
-  "The directory name this project resides in, to be used by helper
+  "The directory name this project resides in, to be used by helper.
 Scripts in determining if the saved-buffer should trigger recompilation.")
 
 ;;; Helper functions for publishing the project
@@ -64,10 +71,10 @@ Scripts in determining if the saved-buffer should trigger recompilation.")
   "The template that gets formatted to produce the full navigation HTML.")
 (defvar my-org-nav-html
   ""
-  "The HTML for the navigation of each page. Set by later function.")
+  "The HTML for the navigation of each page.  Set by later function.")
 
 (defun my-org-build-navigation-html (navlist)
-  "Get the html for the nav section, built from a list"
+  "Get the html for the nav section, built from NAVLIST."
   (let ((formatted-item nil)
 	(inside-html "<li><a href=\"#title\"><h1>%t</h1><h3>%s</h3></a>"))
     
@@ -111,7 +118,7 @@ Scripts in determining if the saved-buffer should trigger recompilation.")
 (setq org-html-postamble nil)
 ;;; Include stylesheet in the head
 (setq org-html-head (concat
-		     "<link rel=\"stylesheet\" href=\"styles.css\">\n"
+		     "<link rel=\"stylesheet\" href=\"/styles.css\">\n"
 		     "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css\">"))
 (setq org-html-head-extra nil)
 ;;; No JavaScript for now
