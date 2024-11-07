@@ -3,45 +3,39 @@
 * Hi, I'm Morgan ~
 Thanks for checking out my website!
 
-I'm an aspiring web and software
-developer studying Computer Science at Kalamazoo Valley Community
-College
+I'm an aspiring web and software developer studying Computer Science at
+Kalamazoo Valley Community College
 
-I previously worked as a Technical Support Specialist for
-FormAssembly for over two years, helping customers build and style
-online forms, manage response data, and integrate with third party
-software
+I previously worked as a Technical Support Specialist for FormAssembly for over
+two years, helping customers build and style online forms, manage response data,
+and integrate with third party software
 
-These days, I enjoy providing comprehensive tech support to
-individuals (and sometimes smaller nonprofits) struggling to make use
-of technology
+These days, I enjoy providing comprehensive tech support to individuals (and
+sometimes smaller nonprofits) struggling to make use of technology
 
 * Projects
 ** Kalamazoo Valley Community College
 *** Static Web Development / CIS 170
 **** /Spring 2024/
-- [[./CIS-170/Project%201/][Gay Panic @@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: A
-  single-page static website meant to demonstrate my understanding of
-  HTML.
-- [[./CIS-170/Project%202/kothman.2a.html][Example Table @@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: This
-  was the first project of a two part assignment where we used tables
-  to format static information on a web page.
+- [[./CIS-170/Project%201/][Gay Panic @@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: A single-page
+  static website meant to demonstrate my understanding of HTML.
+- [[./CIS-170/Project%202/kothman.2a.html][Example Table @@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: This was
+  the first project of a two part assignment where we used tables to format
+  static information on a web page.
 - [[./CIS-170/Project%202/kothman.2b.html][Another Example Table @@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: In
-  part two, I used a table to showcase my experience processing animal
-  bones through decomposition, cleaning, and whitening.
-- [[./CIS-170/Project%203/][Example Form @@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: For
-  our form assignment, I created a spammy (but somewhat well-styled)
-  form that pressures the user to fill it out as quickly as possible,
-  while also providing a mildly annoying user experience. I spent
-  extra time working on CSS tweaks, and implementing a countdown timer
-  in JavaScript.
+  part two, I used a table to showcase my experience processing animal bones
+  through decomposition, cleaning, and whitening.
+- [[./CIS-170/Project%203/][Example Form @@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: For our form
+  assignment, I created a spammy (but somewhat well-styled) form that pressures
+  the user to fill it out as quickly as possible, while also providing a mildly
+  annoying user experience. I spent extra time working on CSS tweaks, and
+  implementing a countdown timer in JavaScript.
 - [[./CIS-170/Project%204/][Example Portfolio Website @@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: The
   goal for our final web page was to create a portfolio site with
-  mobile-responsiveness at the forefront. I enjoyed being somewhat
-  meticulous with crafting my CSS especially, including the use of
-  @media queries. It wasn't until working on this page you're
-  currently reading that I figured out how to use @container queries
-  for more sensible mobile breakpoints.
+  mobile-responsiveness at the forefront. I enjoyed being somewhat meticulous
+  with crafting my CSS especially, including the use of @media queries. It
+  wasn't until working on this page you're currently reading that I figured out
+  how to use @container queries for more sensible mobile breakpoints.
 
 * Contact
 Get in touch!

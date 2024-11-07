@@ -1,7 +1,8 @@
 :root {
     --header-bg-color: #1d1d1d;
-    --body-bg-color: #abc;
+    --body-bg-color: white;
     --other-bg-color: rgb(200, 244, 244);
+    --body-accent-color: #abc;
     --main-border-color: #1d1d1d;
     --other-border-color: lightgrey;
     --header-text-color: white;
@@ -13,6 +14,8 @@
     --link-color-hover: #5340a7;
     --description-list-item-border-color: #0f0f0f;
     --description-list-item-border-left-color: #6a50e7;
+
+    --max-width: 55rem;
 }
 
 * {
@@ -23,7 +26,7 @@ body {
     margin: 0;
     color: var(--main-text-color);
     min-height: 100dvh;
-    background-color: var(--body-bg-color);
+    background-color: var(--body-accent-color);
     font-family: Verdana, Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -57,93 +60,99 @@ body {
 	    container-type: inline-size;
 	    container-name: header;
 	    padding: 2rem;
+	    padding-bottom: 3rem;
 	    border-bottom: 1px solid var(--other-border-color);
 	    background-color: var(--header-bg-color);
-	}	
-    }
-    /* Site Navigation */
-    nav {
-	ul {
-	    list-style: none;
-	    padding: 0;
-	    margin: 0;
 	    display: flex;
 	    flex-direction: row;
-	    align-items: flex-end;
-	    justify-content: space-between;
-	    /* The first list item contains the title and subtitle */
-	    li:first-child {
-		display: flex;
-		flex-direction: column;
-		h1 {
-		    font-size: 2rem;
-		    line-height: 2rem;
-		    margin-bottom: .5rem;
-		}
-		h3 {
-		    font-weight: normal;
-		}
-	    }
-	    /* Everything besides the first list item is a nav-item */
-	    li:not(:first-child) {
-		margin-left: 1rem;
-		list-style: none;
-		display: flex;
-		flex-direction: row;
-		position: relative;
-		font-style: italic;
-		a, a:visited, a:active {
-		    position: relative;
+	    justify-content: center;
+	    /* Site Navigation */
+	    nav {
+		max-width: var(--max-width);
+		width: 100%;
+		ul {
+		    list-style: none;
+		    padding: 0;
+		    margin: 0;
 		    display: flex;
 		    flex-direction: row;
-		    padding: .25rem .5rem;
-		    &::before {
-			content: '';
-			position: absolute;
-			display: inline-flex;
-			margin-right: .25rem;
-			border-left: 2px solid var(--header-border-color);
-			height: 100%;
-			left: 0;
-			bottom: 0;
-		    }
-		    &::after {
-			position: absolute;
-			content: ' ';
-			bottom: 0;
-			left: 0;
-			width: 0%;
-			display: inline-block;
-			border-bottom: 1px solid var(--header-border-color);
-			transition: width .2s ease-in-out;
-		    }
-		    &:hover {
-			&::after {
-			    width: 100%;
+		    align-items: flex-end;
+		    justify-content: space-between;
+		    /* The first list item contains the title and subtitle */
+		    li:first-child {
+			display: flex;
+			flex-direction: column;
+			h1 {
+			    font-size: 2rem;
+			    line-height: 2rem;
+			    margin-bottom: .5rem;
+			}
+			h3 {
+			    font-weight: normal;
 			}
 		    }
+		    /* Everything besides the first list item is a nav-item */
+		    li:not(:first-child) {
+			margin-left: 1rem;
+			list-style: none;
+			display: flex;
+			flex-direction: row;
+			position: relative;
+			font-style: italic;
+			a, a:visited, a:active {
+			    position: relative;
+			    display: flex;
+			    flex-direction: row;
+			    padding: .25rem .5rem;
+			    &::before {
+				content: '';
+				position: absolute;
+				display: inline-flex;
+				margin-right: .25rem;
+				border-left: 2px solid var(--header-border-color);
+				height: 100%;
+				left: 0;
+				bottom: 0;
+			    }
+			    &::after {
+				position: absolute;
+				content: ' ';
+				bottom: 0;
+				left: 0;
+				width: 0%;
+				display: inline-block;
+				border-bottom: 1px solid var(--header-border-color);
+				transition: width .2s ease-in-out;
+			    }
+			    &:hover {
+				&::after {
+				    width: 100%;
+				}
+			    }
+			}
+		    }
+		    a, a:visited, a:active {
+			text-decoration: none;
+			color: var(--header-text-muted-color);
+			display: flex;
+			flex-direction: column;
+		    }
+		}
+		h1, h2, h3, h4, h5, h6 {
+		    color: var(--header-text-color);
+		    margin-top: 0;
+		    margin-bottom: 0;
 		}
 	    }
-	    a, a:visited, a:active {
-		text-decoration: none;
-		color: var(--header-text-muted-color);
-		display: flex;
-		flex-direction: column;
-	    }
-	}
-	h1, h2, h3, h4, h5, h6 {
-	    color: var(--header-text-color);
-	    margin-top: 0;
-	    margin-bottom: 0;
 	}
     }
-
     #content {
 	padding: 2rem;
+	padding-top: 0;
 	container-type: inline-size;
 	max-width: 100%;
 	align-items: center;
-	
+	margin-top: -1rem;
 	dl {
 	    margin: 1rem 0;
 	    display: flex;
@@ -194,12 +203,17 @@ body {
 	    }
 
 	}
+	/* Containers within the #content div */
 	& > div {
+	    padding: 2rem;
+	    padding-top: 0rem;
+	    background-color: var(--body-bg-color);
 	    width: 100%;
-	    max-width: 55rem;
+	    max-width: var(--max-width);
 	}
-	& > div:not(:last-child) {
-	    margin-bottom: 1rem;
+	/* First container should have top padding */
+	& > div:first-child {
+	    padding-top: 2rem;
 	}
 	h1, h2, h3, h4, h5, h6 {
 	    margin-top: 0;
@@ -228,6 +242,7 @@ body {
 	#preamble {
 	    header {
 		padding: 1rem;
+		padding-bottom: 1rem;
 		nav ul {
 		    flex-direction: column;
 		    align-items: flex-start;
@@ -252,24 +267,30 @@ body {
 	#content {
 	    width: 100%;
 	    max-width: 100%;
-	    padding: 1rem;
+	    margin-top: 0;
+	    padding: 0rem;
 	    /* Content Sections that aren't last */
 	    & > div:not(:last-child) {
 		margin-bottom: 0;
 	    }
 	    /* all Content Sections */
 	    & > div {
+		padding: 1rem;
+		padding-bottom: 1rem;
 		p:not(:last-child) {
 		    margin-bottom: .5rem;
 		}
 	    }
-	    
+	    /* First container should have reduced top padding */
+	    & > div:first-child {
+		padding-top: 1rem;
+	    }	    
 	    dl {
 		row-gap: 0;
 		column-gap: 0;
 		.description-list-item {
-		    max-width: 45rem;
-		    width: 100%;
+		    width: 45rem;
+		    max-width: 100%;
 		    padding: 1rem;
 		}
 	    }
