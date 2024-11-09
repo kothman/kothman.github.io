@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&family=Nosifer&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 :root {
-    --header-bg-color: #1d1d1d;
-    --body-bg-color: white;
-    --other-bg-color: rgb(200, 244, 244);
-    --body-accent-color: #abc;
+    --header-bg-color: #ffffa0;
+    --body-bg-color:#a880ff;
+    --content-bg-color: white;
+    --content-border: 2px solid black;
     --main-border-color: #1d1d1d;
     --other-border-color: lightgrey;
-    --header-text-color: white;
+    --header-text-color: black;
     --header-text-muted-color: #fafafa;
-    --header-border-color: #fafafa;
+    --header-border-color: black;
     --main-text-color: black;
     --text-color-muted: #404040;
     --link-color: #00003d;
@@ -23,22 +25,40 @@
 }
 
 body {
+    font-family: "Space Grotesk", Verdana, Arial, sans-serif;
+    font-optical-sizing: auto;
     margin: 0;
     color: var(--main-text-color);
     min-height: 100dvh;
-    background-color: var(--body-accent-color);
-    font-family: Verdana, Arial, sans-serif;
+    background-color: var(--body-bg-color);
+    /* background-image: url("./images/asylum.jpg"); */
+    /* background-position: center; */
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
     display: flex;
     flex-direction: column;
+    width: 100%;
+    align-items: center;
     container-type: inline-size;
-    
+    .underline {
+	text-decoration: underline;
+    }
+    img {
+	max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+	font-family: "Sour Gummy", Verdana, Arial, sans-serif;
+    }
     p {
 	/* text-indent: 1rem; */
 	margin-top: 0;
-	margin-bottom: 1rem;
+	margin-bottom: 0;
 	font-size: 1rem;
 	width: 100%;
 	position: relative;
+	&:last-child {
+	    margin-bottom: 0rem;
+	}
 	/* &::before { */
 	/*     content: '>'; */
 	/*     position: absolute; */
@@ -56,11 +76,14 @@ body {
     #preamble {
 	container-type: inline-size;
 	container-name: preamble;
+	width: 100%;
+	border-bottom: var(--content-border);
+	font-family: "Sour Gummy", Verdana, Arial, sans-serif;
 	header {
 	    container-type: inline-size;
 	    container-name: header;
 	    padding: 2rem;
-	    padding-bottom: 4rem;
+	    padding-bottom: 5rem;
 	    border-bottom: 1px solid var(--other-border-color);
 	    background-color: var(--header-bg-color);
 	    display: flex;
@@ -82,6 +105,7 @@ body {
 		    li:first-child {
 			display: flex;
 			flex-direction: column;
+			flex: 1 1 0;
 			h1 {
 			    font-size: 2rem;
 			    line-height: 2rem;
@@ -98,7 +122,6 @@ body {
 			display: flex;
 			flex-direction: row;
 			position: relative;
-			font-style: italic;
 			a, a:visited, a:active {
 			    position: relative;
 			    display: flex;
@@ -133,7 +156,7 @@ body {
 		    }
 		    a, a:visited, a:active {
 			text-decoration: none;
-			color: var(--header-text-muted-color);
+			color: var(--header-text-color);
 			display: flex;
 			flex-direction: column;
 		    }
@@ -147,12 +170,25 @@ body {
 	}
     }
     #content {
-	padding: 2rem;
-	padding-top: 0;
+	box-shadow: 5px -5px 5px 0px rgba(0, 0, 0, 0.23);
+	margin: 2rem;
+	margin-top: 0;
 	container-type: inline-size;
-	max-width: 100%;
+	max-width: var(--max-width);
+	width: 100%;
 	align-items: center;
-	margin-top: -2rem;
+	margin-top: -3rem;
+	border: var(--content-border);
+	a, a:visited {
+	    transition: all .2s ease-in-out;
+	    color: var(--link-color);
+	    &:hover, &:active {
+		color: var(--link-color-hover);
+	    }
+	}
+	ul {
+	    margin-top: .5rem;
+	}
 	dl.card-descriptive-list {
 	    max-width: 100%;
 	    width: 100%;
@@ -173,38 +209,30 @@ body {
 		dt {
 		    margin-bottom: 0.5rem;
 		    position: relative;
-		    a, a:visited {
-			transition: all .2s ease-in-out;
-			color: var(--link-color);
-			&:hover, &:active {
-			    color: var(--link-color-hover);
-			    text-shadow: 1px 1px 4px 8px black;
-			
-			}
-			i.bi {
-			    margin-left: .5rem;
-			    position: absolute;
-			    right: 0;
-			}
+		    a i.bi {
+			margin-left: .5rem;
+			position: absolute;
+			right: 0;
 		    }
 		}
-		dd {
-		    margin-left: 0;
-		    max-width: 20rem;
-		}
 	    }
-
+	    dd {
+		margin-left: 0;
+		max-width: 20rem;
+	    }
 	}
 	/* Containers within the #content div */
-	& > div {
-	    padding: 2rem;
-	    padding-top: 0rem;
-	    background-color: var(--body-bg-color);
+	& > div, & > p {
+	    padding-left: 2rem;
+	    padding-right: 2rem;
+	    padding-bottom: 2rem;
+	    margin-bottom: 0;
+	    background-color: var(--content-bg-color);
 	    width: 100%;
 	    max-width: var(--max-width);
 	}
 	/* First container should have top padding */
-	& > div:first-child {
+	& > div:first-child, & > p:first-child {
 	    padding-top: 2rem;
 	}
 	h1, h2, h3, h4, h5, h6 {
@@ -272,10 +300,11 @@ body {
 	    }
 	}
 	#content {
+	    box-shadow: none;
 	    width: 100%;
 	    max-width: 100%;
 	    margin-top: 0;
-	    padding: 0rem;
+	    margin: 0rem;
 	    /* Content Sections that aren't last */
 	    & > div:not(:last-child) {
 		margin-bottom: 0;
@@ -293,10 +322,10 @@ body {
 		padding-top: 1rem;
 	    }
 	    dl.card-descriptive-list {
-		.description-list-item {
-		    max-width: 100%;
 		    row-gap: 0;
 		    column-gap: 0;
+		.description-list-item {
+		    max-width: 100%;
 		}
 	    }
 	}
