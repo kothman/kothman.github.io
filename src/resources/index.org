@@ -2,4 +2,6 @@
 
 * Resources
 ** Michigan
-- [[https://www.state.mi.us/dit/][State of Michigan Contact Directory]]
+*** Contact Directories for State Officials
+- @@html:<a href="https://www.state.mi.us/dit/" target="_blank">State of Michigan Contact Directory</a>@@
+- @@html:<a href="https://legislature.mi.gov/Legislature/Directory" target="_blank">Legislative Contact Directory</a>@@
