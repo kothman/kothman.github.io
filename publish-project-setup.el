@@ -17,10 +17,20 @@
   "The directory name this project resides in, to be used by helper.
 Scripts in determining if the saved-buffer should trigger recompilation.")
 
+(defvar my-org-index-nav)
+(setq my-org-index-nav
+  '(("resources" . "/resources/") ("services" . "/services/")))
 
-(defvar base-url)
-(setq base-url "file:///home/kothman/code/static-streamline/public")
-;;;(setq base-url "https://kothman.github.io")
+(defvar base-url nil
+  "The base url value to be used when building links.
+I'm not sure if org-mode's relative path building works for <head> html.")
+(defvar export-for-dev nil
+  "Nil unless the project is being exported for development.")
+(setq export-for-dev nil)
+(if export-for-dev
+    (setq base-url "file:///home/kothman/code/static-streamline/public")
+  (setq base-url "https://kothman.github.io"))
+
 
 ;;; Helper functions for publishing the project
 (defun my-org-publish ()
@@ -66,11 +76,13 @@ Scripts in determining if the saved-buffer should trigger recompilation.")
 (keymap-global-set "C-c o P" 'my-org-publish-force)
 (keymap-global-set "C-c o p" 'my-org-publish)
 
-
-(defvar my-org-index-nav
-  '(about projects contact))
-(defvar my-org-nav-item-template
-  "<li id=\"nav-%s\"><a href=\"#%s\">%s</a></li>")
+(defvar my-org-nav-item-template)
+(setq my-org-nav-item-template
+      (concat "<li id=\"nav-%s\"><a href=\""
+	      base-url
+	      "%s"
+	      (when export-for-dev "index.html")
+	      "\">%s</a></li>"))
 (defvar my-org-nav-template
   "<header><nav><ul>%s</ul></nav></header>"
   "The template that gets formatted to produce the full navigation HTML.")
@@ -81,7 +93,11 @@ Scripts in determining if the saved-buffer should trigger recompilation.")
 (defun my-org-build-navigation-html (navlist)
   "Get the html for the nav section, built from NAVLIST."
   (let ((formatted-item nil)
-	(inside-html (concat "<li><a href=\"" base-url "\"><h1>%t</h1><h3>%s</h3></a>")))
+	(inside-html
+	 (concat "<li><a href=\""
+		 base-url
+		 (when export-for-dev "/index.html")
+		 "\"><h1>%t</h1><h3>%s</h3></a>")))
     
     (dolist
 	;;; (list-item/element, list to loop through,
@@ -89,7 +105,7 @@ Scripts in determining if the saved-buffer should trigger recompilation.")
 	(list-item navlist)
       (setq formatted-item
 	    (format my-org-nav-item-template
-		    list-item list-item list-item))
+		    (car list-item) (cdr list-item) (car list-item)))
       (setq inside-html
 	    (concat inside-html formatted-item)))
     (setq my-org-nav-html (format my-org-nav-template inside-html)))
