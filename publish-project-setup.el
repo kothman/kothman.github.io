@@ -7,19 +7,19 @@
 ;;; Org-Mode Export - Publish
 (require 'ox-publish)
 (require 'ox-html)
-
 ;;; Code:
-(load-file "./ox-html.elc")
-
 
 ;;; Define what directory name should be looked for during post-save hook
 (defvar directory-name "static-streamline"
   "The directory name this project resides in, to be used by helper.
 Scripts in determining if the saved-buffer should trigger recompilation.")
 
+;;; Define our navigation directories to display
 (defvar my-org-index-nav)
 (setq my-org-index-nav
-  '(("resources" . "/resources/") ("services" . "/services/")))
+  '(("home" . "/")
+    ("resources" . "/resources/")
+    ("services" . "/services/")))
 
 (defvar base-url nil
   "The base url value to be used when building links.
@@ -114,8 +114,60 @@ I'm not sure if org-mode's relative path building works for <head> html.")
 ;;; Build the html sections that should go on each page
 (my-org-build-navigation-html my-org-index-nav)
 
+
+;;;;; Redefine ox-html functions for better control
+
+;;;;;; Redefine org-html-format-list-item
+(defun org-html-format-list-item (contents type checkbox info
+					   &optional term-counter-id
+					   headline)
+  "Format a list item into HTML.
+CONTENTS is the item contents.  TYPE is one of symbols `ordered',
+`unordered', or `descriptive'.  CHECKBOX checkbox type is nil or one of
+symbols `on', `off', or `trans'.   INFO is the info plist."
+  (let ((class (if checkbox
+		   (format " class=\"%s\""
+			   (symbol-name checkbox)) ""))
+	(checkbox (concat (org-html-checkbox checkbox info)
+			  (and checkbox " ")))
+	(br (org-html-close-tag "br" nil info))
+	(extra-newline (if (and (org-string-nw-p contents) headline) "\n" "")))
+    (concat
+     (pcase type
+       (`ordered
+	(let* ((counter term-counter-id)
+	       (extra (if counter (format " value=\"%s\"" counter) "")))
+	  (concat
+	   (format "<li%s%s>" class extra)
+	   (when headline (concat headline br)))))
+       (`unordered
+	(let* ((id term-counter-id)
+	       (extra (if id (format " id=\"%s\"" id) "")))
+	  (concat
+	   (format "<li%s%s>" class extra)
+	   (when headline (concat headline br)))))
+       (`descriptive
+	(let* ((term term-counter-id))
+	  (setq term (or term "(no term)"))
+	  ;; Check-boxes in descriptive lists are associated to tag.
+	  (concat "<div class=\"description-list-item\">"
+		  (format "<dt%s>%s</dt>"
+			  class (concat checkbox term))
+		  "<dd>"))))
+     (unless (eq type 'descriptive) checkbox)
+     extra-newline
+     (and (org-string-nw-p contents) (org-trim contents))
+     extra-newline
+     (pcase type
+       (`ordered "</li>")
+       (`unordered "</li>")
+       (`descriptive "</dd></div>")))))
+
 ;;;;;; Set org export variables
 ;;;;;;
+(setq org-html-doctype "html5")
+(setq org-html-html5-fancy t)
+
 ;;; Don't export the Table of Contents
 (setq org-export-with-toc nil)
 ;;; Don't export drawers
