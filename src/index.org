@@ -2,11 +2,10 @@
 * about me
 I'm a *web developer* studying computer science, with a passion for making
 technology accessible to the average person.
-* projects
+* COMMENT projects
 ** Kalamazoo Valley Community College
 *** Static Web Development / CIS 170
 **** /Spring 2024/
-
 #+ATTR_HTML: :class card-descriptive-list
 - [[./CIS-170/Project%201/][Gay Panic @@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: [[./images/p1.png]]
 - [[./CIS-170/Project%202/kothman.2a.html][Table @@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: [[./images/p2.png]]
