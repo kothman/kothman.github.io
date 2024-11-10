@@ -2,7 +2,7 @@
 
 :root {
     --header-bg-color: #ffffa0;
-    --body-bg-color:#a880ff;
+    --body-bg-color:#deffed;
     --content-bg-color: white;
     --content-border: 2px solid black;
     --main-border-color: #1d1d1d;
@@ -16,7 +16,6 @@
     --link-color-hover: #5340a7;
     --description-list-item-border-color: #0f0f0f;
     --description-list-item-border-left-color: #6a50e7;
-
     --max-width: 55rem;
 }
 
@@ -46,7 +45,7 @@ body {
     img {
 	max-width: 100%;
     }
-    h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3 {
 	font-family: "Sour Gummy", Verdana, Arial, sans-serif;
     }
     p {
@@ -179,6 +178,7 @@ body {
 	align-items: center;
 	margin-top: -3rem;
 	border: var(--content-border);
+	overflow: hidden;
 	a, a:visited {
 	    transition: all .2s ease-in-out;
 	    color: var(--link-color);
@@ -242,10 +242,8 @@ body {
 	    border-bottom: 1px solid var(--main-border-color);
 	}
 	h3, h4, h5, h6 {
-	    margin-bottom: 0;
-	}
-	h4, h5, h6 {
 	    font-weight: normal;
+	    margin-bottom: 0;
 	}
     }
 }
