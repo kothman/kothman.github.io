@@ -19,7 +19,9 @@ Scripts in determining if the saved-buffer should trigger recompilation.")
 (setq my-org-index-nav
   '(("home" . "/")
     ("resources" . "/resources/")
-    ("services" . "/services/")))
+    ("services" . "/services/")
+    ("blog" . "/blog/")
+    ("contact" . "/contact/")))
 
 (defvar base-url nil
   "The base url value to be used when building links.
