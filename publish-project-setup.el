@@ -85,9 +85,9 @@ I'm not sure if org-mode's relative path building works for <head> html.")
 	      "%s"
 	      (when export-for-dev "index.html")
 	      "\">%s</a></li>"))
-(defvar my-org-nav-template
-  "<header><nav><ul>%s</ul></nav></header>"
-  "The template that gets formatted to produce the full navigation HTML.")
+(defvar my-org-nav-template)
+(setq my-org-nav-template
+  "<header><nav><ul>%s</ul></nav></header>")
 (defvar my-org-nav-html
   ""
   "The HTML for the navigation of each page.  Set by later function.")
@@ -192,7 +192,7 @@ symbols `on', `off', or `trans'.   INFO is the info plist."
 ;;; Customize Postamble
 (setq org-html-postamble nil)
 ;;; Include stylesheet in the head
-(setq org-html-head (concat "<link rel=\"stylesheet\" href=\"" base-url "/styles.css\">"))
+(setq org-html-head (concat "<link rel=\"stylesheet\" href=\"" base-url "/styles.css?busted=" (format-time-string "%s") "\">"))
 (setq org-html-head-extra "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css\">")
 (defvar org-html-head-develop nil "The development stylesheet headers to use when testing locally.")
 (setq org-html-head-develop (concat
