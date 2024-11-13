@@ -199,6 +199,8 @@ body {
 	margin-top: -3rem;
 	border: var(--content-border);
 	overflow: hidden;
+	background-color: var(--content-bg-color);
+	flex-grow: 1;
 	p:has(style) {
 	    display: none;
 	}
@@ -250,7 +252,6 @@ body {
 	    padding-right: 2rem;
 	    padding-bottom: 2rem;
 	    margin-bottom: 0;
-	    background-color: var(--content-bg-color);
 	    width: 100%;
 	    max-width: var(--max-width);
 	}
