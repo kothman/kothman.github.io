@@ -295,6 +295,12 @@ body {
 	    font-weight: normal;
 	    margin-bottom: 0;
 	}
+	img.content-image {
+	    aspect-ratio: 3/4;
+	    width: 10rem;
+	    float: left;
+	    margin-right: 1rem;
+	}   
     }
 }
 
@@ -409,6 +415,13 @@ body {
 		.description-list-item {
 		    max-width: 100%;
 		}
+	    }
+	    img.content-image {
+		float: initial;
+		display: block;
+		width: 100%;
+		margin-right: initial;
+		margin-bottom: 0.5rem;
 	    }
 	}
     }

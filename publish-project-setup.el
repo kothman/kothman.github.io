@@ -28,7 +28,7 @@ Scripts in determining if the saved-buffer should trigger recompilation.")
 I'm not sure if org-mode's relative path building works for <head> html.")
 (defvar export-for-dev nil
   "Nil unless the project is being exported for development.")
-(setq export-for-dev nil)
+(setq export-for-dev t)
 (if export-for-dev
     (setq base-url "file:///home/kothman/code/static-streamline/public")
   (setq base-url "https://kothman.github.io"))

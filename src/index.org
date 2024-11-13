@@ -2,8 +2,11 @@
 @@html:<style>#nav-home a::after { width: 100% !important; }</style>@@
 
 * About Me @@html:<i class="bi bi-house-heart"></i>@@
-I'm a *web developer* studying computer science, with a passion for making
+#+ATTR_HTML: :class content-image :alt A photo of Morgan holding a turnip close to the size of her head.
+[[./images/me.jpg]] I'm a *web developer* studying computer science, with a passion for making
 technology accessible to the average person.
+
+
 * COMMENT projects
 ** Kalamazoo Valley Community College
 *** Static Web Development / CIS 170
