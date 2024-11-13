@@ -1,0 +1,3 @@
+#+SETUPFILE: ../html.setup
+@@html:<style>#nav-blog a::after { width: 100% !important; }</style>@@
+* Blog @@html:<i class="bi bi-journals"></i>@@
