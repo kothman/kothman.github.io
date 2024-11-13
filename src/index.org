@@ -1,5 +1,7 @@
 #+SETUPFILE: html.setup
-* about me
+@@html:<style>#nav-home a::after { width: 100% !important; }</style>@@
+
+* About Me @@html:<i class="bi bi-house-heart"></i>@@
 I'm a *web developer* studying computer science, with a passion for making
 technology accessible to the average person.
 * COMMENT projects
@@ -12,3 +14,4 @@ technology accessible to the average person.
 - [[./CIS-170/Project%202/kothman.2b.html][Another Table @@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: [[./images/p2b.png]]
 - [[./CIS-170/Project%203/][Form @@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: [[./images/p3.png]]
 - [[./CIS-170/Project%204/][Portfolio Website @@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: [[./images/p4.png]]
+

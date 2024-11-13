@@ -4,7 +4,7 @@
     --header-bg-color: #ffffa0;
     --body-bg-color:#deffed;
     --content-bg-color: white;
-    --content-border: 2px solid black;
+    --content-border: 1rem ridge #83e0ff;
     --main-border-color: #1d1d1d;
     --other-border-color: lightgrey;
     --header-text-color: black;
@@ -100,6 +100,34 @@ body {
 		    flex-direction: row;
 		    align-items: flex-end;
 		    justify-content: space-between;
+		    li a::before {
+			display: inline-flex;
+			align-items: center;
+			font-family: bootstrap-icons !important;
+			font-style: normal;
+			font-weight: 400 !important;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+			vertical-align: -.125em;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		    }
+		    #nav-home a::before {
+			content: '\F776\00a0';
+		    }
+		    #nav-resources a::before {
+			content: '\F467\00a0';
+		    }
+		    #nav-services a::before {
+			content: '\F8F7\00a0';
+		    }
+		    #nav-blog a::before {
+			content: '\F447\00a0';
+		    }
+		    #nav-contact ::before {
+			content: '\F737\00a0';
+		    }
 		    /* The first list item contains the title and subtitle */
 		    li:first-child {
 			display: flex;
@@ -126,16 +154,6 @@ body {
 			    display: flex;
 			    flex-direction: row;
 			    padding: .25rem .5rem;
-			    &::before {
-				content: '';
-				position: absolute;
-				display: inline-flex;
-				margin-right: .25rem;
-				border-left: 2px solid var(--header-border-color);
-				height: 100%;
-				left: 0;
-				bottom: 0;
-			    }
 			    &::after {
 				position: absolute;
 				content: ' ';
@@ -148,6 +166,8 @@ body {
 			    }
 			    &:hover {
 				&::after {
+				    /* Make the bottom border expand
+                                           from 0% to 100% */
 				    width: 100%;
 				}
 			    }
@@ -179,6 +199,9 @@ body {
 	margin-top: -3rem;
 	border: var(--content-border);
 	overflow: hidden;
+	p:has(style) {
+	    display: none;
+	}
 	a, a:visited {
 	    transition: all .2s ease-in-out;
 	    color: var(--link-color);
@@ -232,14 +255,25 @@ body {
 	    max-width: var(--max-width);
 	}
 	/* First container should have top padding */
-	& > div:first-child, & > p:first-child {
+	& > div:first-child, & > p:first-child, & > p:has(style) + div {
 	    padding-top: 2rem;
 	}
 	h1, h2, h3, h4, h5, h6 {
 	    margin-top: 0;
 	}
+	/* Main Content Header */
 	h2 {
 	    border-bottom: 1px solid var(--main-border-color);
+	    /* icons should float to the right within content title / main heading */
+	    i {
+		float: right;
+	    }
+	}
+	h3 {
+	    text-decoration: underline;
+	}
+	h4 {
+	    font-style: italic;
 	}
 	h3, h4, h5, h6 {
 	    font-weight: normal;
@@ -301,8 +335,8 @@ body {
 	    box-shadow: none;
 	    width: 100%;
 	    max-width: 100%;
-	    margin-top: 0;
 	    margin: 0rem;
+	    margin-top: -1rem;
 	    /* Content Sections that aren't last */
 	    & > div:not(:last-child) {
 		margin-bottom: 0;
