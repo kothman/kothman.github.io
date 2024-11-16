@@ -18,22 +18,37 @@ Scripts in determining if the saved-buffer should trigger recompilation.")
 (defvar my-org-index-nav)
 (setq my-org-index-nav
   '(("home" . "/")
-    ("resources" . "/resources/")
-    ("services" . "/services/")
-    ("blog" . "/blog/")
-    ("contact" . "/contact/")))
+   ; ("resources" . "/resources/")
+   ; ("services" . "/services/")
+    ("blog" . "/blog/")))
 
 (defvar base-url nil
   "The base url value to be used when building links.
 I'm not sure if org-mode's relative path building works for <head> html.")
 (defvar export-for-dev nil
   "Nil unless the project is being exported for development.")
+;;; CHANGE ME IF NEEDED
 (setq export-for-dev nil)
-(if export-for-dev
-    (setq base-url "file:///home/kothman/code/static-streamline/public")
-  (setq base-url "https://kothman.github.io"))
 
-
+(defun my-export-for-prod () "Build the project for production."
+       (interactive)
+       (my-export-for-dev t))
+(defun my-export-for-dev (&optional build-for-prod)
+  "Build the project for dev if BUILD-FOR-PROD is nil."
+  (interactive)
+  (let ((prev-export-for-dev export-for-dev))
+    (if build-for-prod
+	(setq export-for-dev nil)
+      (setq export-for-dev t))
+    (my-update-base-url)
+   (my-org-publish-force)
+    (setq export-for-dev prev-export-for-dev)))
+(defun my-update-base-url () "Update MY-BASE-URL based on MY-EXPORT FOR DEV."
+       (interactive)
+       (if export-for-dev
+	   (setq base-url "file:///home/kothman/code/static-streamline/public")
+	 (setq base-url "https://kothman.github.io")))
+(my-update-base-url) ; call this once on load
 ;;; Helper functions for publishing the project
 (defun my-org-publish ()
   "My function for publishing org projects as HTML."
@@ -94,6 +109,7 @@ I'm not sure if org-mode's relative path building works for <head> html.")
 
 (defun my-org-build-navigation-html (navlist)
   "Get the html for the nav section, built from NAVLIST."
+  (interactive)
   (let ((formatted-item nil)
 	(inside-html
 	 (concat "<li><a href=\""
@@ -105,11 +121,14 @@ I'm not sure if org-mode's relative path building works for <head> html.")
 	;;; (list-item/element, list to loop through,
 	;;;    &optional return element )
 	(list-item navlist)
+      ;; set the formatted-item to the result of 
       (setq formatted-item
 	    (format my-org-nav-item-template
 		    (car list-item) (cdr list-item) (car list-item)))
       (setq inside-html
 	    (concat inside-html formatted-item)))
+    ;; add the contact link custom, since it's an email based on a var
+    (setq inside-html (concat inside-html "<li id=\"nav-contact\">%e</li>"))
     (setq my-org-nav-html (format my-org-nav-template inside-html)))
   )
 
@@ -164,6 +183,120 @@ symbols `on', `off', or `trans'.   INFO is the info plist."
        (`ordered "</li>")
        (`unordered "</li>")
        (`descriptive "</dd></div>")))))
+(defun org-html-template (contents info)
+  "Return complete document string after HTML conversion.
+CONTENTS is the transcoded contents string.  INFO is a plist
+holding export options."
+  (concat
+   (when (and (not (org-html-html5-p info)) (org-html-xhtml-p info))
+     (let* ((xml-declaration (plist-get info :html-xml-declaration))
+	    (decl (or (and (stringp xml-declaration) xml-declaration)
+		      (cdr (assoc (plist-get info :html-extension)
+				  xml-declaration))
+		      (cdr (assoc "html" xml-declaration))
+		      "")))
+       (when (not (or (not decl) (string= "" decl)))
+	 (format "%s\n"
+		 (format decl
+			 (or (and org-html-coding-system
+				  (coding-system-get org-html-coding-system :mime-charset))
+			     "iso-8859-1"))))))
+   (org-html-doctype info)
+   "\n"
+   (concat "<html"
+	   (cond ((org-html-xhtml-p info)
+		  (format
+		   " xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"%s\" xml:lang=\"%s\""
+		   (plist-get info :language) (plist-get info :language)))
+		 ((org-html-html5-p info)
+		  (format " lang=\"%s\"" (plist-get info :language))))
+	   ">\n")
+   "<head>\n"
+   (org-html--build-meta-info info)
+   (org-html--build-head info)
+   (org-html--build-mathjax-config info)
+   "</head>\n"
+   "<body>\n"
+   (let ((link-up (org-trim (plist-get info :html-link-up)))
+	 (link-home (org-trim (plist-get info :html-link-home))))
+     (unless (and (string= link-up "") (string= link-home ""))
+       (format (plist-get info :html-home/up-format)
+	       (or link-up link-home)
+	       (or link-home link-up))))
+   ;; Preamble.
+   (org-html--build-pre/postamble 'preamble info)
+   ;; Document contents.
+   (let ((div (assq 'content (plist-get info :html-divs))))
+     (format "<%s id=\"%s\" class=\"%s\">\n"
+             (nth 1 div)
+             (nth 2 div)
+             (plist-get info :html-content-class)))
+   ;; Document title.
+   (when (plist-get info :with-title)
+     (let ((title (and (plist-get info :with-title)
+		       (plist-get info :title)))
+	   (subtitle (plist-get info :subtitle))
+	   (html5-fancy (org-html--html5-fancy-p info)))
+       (when title
+	 (format
+	  (if html5-fancy
+	      "<header>\n<h1 class=\"title\">%s</h1>\n%s</header>"
+	    "<h1 class=\"title\">%s%s</h1>\n")
+	  (org-export-data title info)
+	  (if subtitle
+	      (format
+	       (if html5-fancy
+		   "<p class=\"subtitle\" role=\"doc-subtitle\">%s</p>\n"
+		 (concat "\n" (org-html-close-tag "br" nil info) "\n"
+			 "<span class=\"subtitle\">%s</span>\n"))
+	       (org-export-data subtitle info))
+	    "")))))
+   ;; add another container for some fun styling tricks
+   (let ((div (assq 'content (plist-get info :html-divs))))
+     (concat
+      (format "<%s id=\"%s-subcontainer\" class=\"%s-subcontainer\">\n"
+	      (nth 1 div)
+	      (nth 2 div)
+	      (plist-get info :html-content-class))
+      contents
+      "</div>\n"))
+   
+   (format "</%s>\n" (nth 1 (assq 'content (plist-get info :html-divs))))
+   ;; Postamble.
+   (org-html--build-pre/postamble 'postamble info)
+   ;; Possibly use the Klipse library live code blocks.
+   (when (plist-get info :html-klipsify-src)
+     (concat "<script>" (plist-get info :html-klipse-selection-script)
+	     "</script><script src=\""
+	     org-html-klipse-js
+	     "\"></script><link rel=\"stylesheet\" type=\"text/css\" href=\""
+	     org-html-klipse-css "\"/>"))
+   ;; Closing document.
+   "</body>\n</html>"))
+;; Remove closing tags for meta-info
+(defun org-html--build-meta-entry
+    (label identity &optional content-format &rest content-formatters)
+  "Build a meta tag using the provided information.
+
+Construct <meta> tag of form <meta LABEL=\"IDENTITY\">, or when CONTENT-FORMAT
+is present: <meta LABEL=\"IDENTITY\" content=\"{content}\">
+
+Here {content} is determined by applying any CONTENT-FORMATTERS to the
+CONTENT-FORMAT and encoding the result as plain text."
+  (concat "<meta "
+	  (format "%s=\"%s" label identity)
+	  (when content-format
+	    (concat "\" content=\""
+		    (replace-regexp-in-string
+		     "\"" "&quot;"
+		     (org-html-encode-plain-text
+		      (if content-formatters
+			  (apply #'format content-format content-formatters)
+			content-format)))))
+	  ;;; a changed line
+	  "\">\n"))
+
+
 
 ;;;;;; Set org export variables
 ;;;;;;
@@ -180,6 +313,7 @@ symbols `on', `off', or `trans'.   INFO is the info plist."
 (setq org-export-with-broken-links 'mark)
 ;;; Remove the standard title
 (setq org-export-with-title nil)
+(setq org-export-with-email t)
 
 ;;;;;;
 ;;;;;; Set HTML-specific export variables
@@ -190,13 +324,24 @@ symbols `on', `off', or `trans'.   INFO is the info plist."
 (setq org-html-preamble-format
       `(("en" ,my-org-nav-html)))
 ;;; Customize Postamble
-(setq org-html-postamble nil)
+(setq org-html-postamble t)
+;;; Define the postable format for each language here
+(defvar my-org-html-postamble-html nil
+  "My footer for html exports.")
+(setq my-org-html-postamble-html
+      "made with emacs - 
+<a href=\"javascript:window.open(\'https://validator.w3.org/check?uri=\'+encodeURIComponent(window.location));\">
+  accessibility
+</a>")
+(setq org-html-postamble-format
+      `(("en" ,my-org-html-postamble-html)))
 ;;; Include stylesheet in the head
-(setq org-html-head (concat "<link rel=\"stylesheet\" href=\"" base-url "/styles.css?busted=" (format-time-string "%s") "\">"))
-(setq org-html-head-extra "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css\">")
+(setq org-html-head (concat "<link rel=\"stylesheet\" href=\"" base-url "/styles.css?busted=" (format-time-string "%s") "\">"
+			    "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css\">"))
+(setq org-html-head-extra "<!-- don't forget to update me in each org file with the active nav item! -->")
 (defvar org-html-head-develop nil "The development stylesheet headers to use when testing locally.")
 (setq org-html-head-develop (concat
-		     "<link rel=\"stylesheet\" href=\"/styles.css\">\n"
+		     "<link rel=\"stylesheet\" href=\"/styles.css\">"
 		     "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css\">"))
 
 ;;; No JavaScript for now
