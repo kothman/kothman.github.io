@@ -1,3 +1,5 @@
 #+SETUPFILE: ../html.setup
-@@html:<style>#nav-blog a::after { width: 100% !important; }</style>@@
+#+HTML_HEAD_EXTRA: <style>#nav-blog a::after { width: 100% !important; }</style>
+
 * Blog @@html:<i class="bi bi-journals"></i>@@
+** [[./posts/how I made this website.org][How I made this website]]
