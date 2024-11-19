@@ -9,9 +9,12 @@
 [[./images/me.jpg]]
 #+end_column
 #+begin_column
-#+ATTR_HTML: :class indent-1
+#+ATTR_HTML: :class indent-1 mt-0
 I'm a *web developer* studying computer science in Kalamazoo, MI, with a passion
 for making technology accessible to the average person.
+
+I enjoy cooking, making music, gardening, learning new skills, spending time
+with loved ones, and so many other regular human things.
 #+end_column
 #+end_row
 #+end_flex
