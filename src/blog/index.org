@@ -4,7 +4,7 @@
 # I'd like to create a src block here that, when evaluated, compiles all of my
 # selected blog posts (the ones that aren't drafts - maybe a separate folder?),
 # and builds the HTML for each post preview section.
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :exports none
 
 #+end_src
 

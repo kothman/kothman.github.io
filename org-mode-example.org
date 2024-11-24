@@ -1,0 +1,63 @@
+#+begin_src emacs-lisp :tangle no :exports none
+(add-to-list 'org-src-lang-modes '("inline-html" . html))
+(defvar org-babel-default-header-args:inline-html
+  '((:results . "html")
+    (:exports . "results")))
+(defun org-babel-execute:inline-html (body _params) body)
+#+end_src
+
+Evaluate the above inside your org mode buffer, then you can do the following, (for example)
+
+Here's some text in my org mode buffer, I can directly put a <br/> inside by doing this src_inline-html[]{<br/>}
+
+I can even have much more complex html in a dedicated src block directly in my org-mode buffer that gets added to the exported document!
+
+#+begin_src inline-html
+<div>
+  some complex stuff, including a script maybe
+  <script .../>
+</div>
+#+end_src
+
+
+
+I do the same thing for JS and CSS too, so I can just declare inline in my org mode the styles and behavior of the page.
+I put the top block in this gist and the following 2 blocks in my emacs config, but you can just put it directly in the org mode document you are working on too:
+
+#+begin_src emacs-lisp
+;; https://emacs.stackexchange.com/a/28471
+(add-to-list 'org-src-lang-modes '("inline-js" . js2))
+(defvar org-babel-default-header-args:inline-js
+  '((:results . "html")
+    (:exports . "results")))
+(defun org-babel-execute:inline-js (body _params)
+  (format "<script type=\"text/javascript\">\n%s\n</script>" body))
+#+end_src
+
+;; https://emacs.stackexchange.com/a/28471
+#+begin_src emacs-lisp :tangle no :exports none
+(add-to-list 'org-src-lang-modes '("inline-css" . scss))
+(defvar org-babel-default-header-args:inline-css
+  '((:results . "html")
+    (:exports . "results")))
+(defun org-babel-execute:inline-css (body _params)
+  (format "<style type=\"text/css\">\n%s\n</style>" body))
+#+end_src
+
+Use them in your blog posts like this:
+#+begin_src inline-js
+document.body.addEventListener('click', (e) => {
+   // ...
+});
+#+end_src
+
+#+begin_src inline-css
+code {
+    max-height: 200px;
+    display: inline-block;
+    overflow-y: auto;
+}
+#+end_src
+
+
+See an example of all this in action here https://mjdiloreto.github.io/books_i_like/
