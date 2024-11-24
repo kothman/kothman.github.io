@@ -2,33 +2,36 @@
 #+HTML_HEAD_EXTRA: <style>#nav-home a::after { width: 100% !important; }</style>
 
 * About Me @@html:<i class="bi bi-house-heart"></i>@@
-#+begin_flex
-#+begin_row
-#+begin_column
+#+BEGIN_EXPORT html
+<div class="flex">
+<div class="row">
+<div class="column">
+#+END_EXPORT
+#+CAPTION: I love turnips
 #+ATTR_HTML: :class content-image :alt A photo of Morgan holding a turnip close to the size of her head.
 [[./images/me.jpg]]
-#+end_column
-#+begin_column
-#+ATTR_HTML: :class indent-1 mt-0
+#+BEGIN_EXPORT html
+</div>
+<div class="column mt-0">
+#+END_EXPORT
 I'm a *web developer* studying computer science in Kalamazoo, MI, with a passion
 for making technology accessible to the average person.
 
 I enjoy cooking, making music, gardening, learning new skills, spending time
 with loved ones, and so many other regular human things.
-#+end_column
-#+end_row
-#+end_flex
-
-# Everything after this is commented out, because the top level header is
-# commented.
-* COMMENT projects
-** Kalamazoo Valley Community College
-*** Static Web Development / CIS 170
-**** /Spring 2024/
-#+ATTR_HTML: :class card-descriptive-list
-- [[./CIS-170/Project%201/][Gay Panic @@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: [[./images/p1.png]]
-- [[./CIS-170/Project%202/kothman.2a.html][Table @@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: [[./images/p2.png]]
-- [[./CIS-170/Project%202/kothman.2b.html][Another Table @@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: [[./images/p2b.png]]
-- [[./CIS-170/Project%203/][Form @@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: [[./images/p3.png]]
-- [[./CIS-170/Project%204/][Portfolio Website @@html:<i class="bi bi-box-arrow-up-right"></i>@@]] :: [[./images/p4.png]]
-
+#+HTML: <div class="row"><div class="column">
+#+CAPTION: Winnie would like some sushi, please!
+#+ATTR_HTML: alt: Morgan holding a plate of homemade sushi
+[[./images/sushi.jpg]]
+#+HTML: </div><!--end column--><div class="column">
+#+CAPTION: It wasn't my best, but it was still tasty
+#+ATTR_HTML: alt: A golden load of focaccia on a wooden cutting board.
+[[./images/focaccia.jpg]]
+#+CAPTION: Some of my plants
+#+ATTR_HTML: alt: An assortment of plants spread out.
+[[./images/plants.jpg]]
+#+CAPTION: Sushi prep!
+#+ATTR_HTML: alt: Getting the sushi ready to roll!
+[[./images/sushi-prep.jpg]]
+#+HTML: </div><!-- end column --></div><!-- end row-->
+#+HTML: </div><!--end column--></div><!--end row--></div><!--end flex-->

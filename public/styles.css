@@ -36,10 +36,53 @@
     float: right;
 }
 
+table {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    colgroup {
+	display: none;
+    }
+    thead {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 0px;
+	tr {
+	    display: flex;
+	    flex-direction: row;
+	    flex: 1 1 0px;
+	    th {
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 0px;
+	    }
+	}
+    }
+    tbody {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 0px;
+	tr {
+	    display: flex;
+	    flex-direction: row;
+	    flex: 1 1 0px;
+	    td {
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 0px;		
+	    }
+	}
+    }
+    .org-left { text-align: left; }
+}
+
+
+
 /* Flex (grid/column/row styles) */
 .flex {
     display: flex;
     flex-direction: row;
+    flex: 1 1 0px;
     width: 100%;
     container-type: inline-size;
     container-name: flex;
@@ -48,9 +91,11 @@
 	flex-direction: row;
 	column-gap: 1rem;
 	row-gap: 1rem;
+	flex: 1 1 0px;
 	.column {
 	    display: flex;
 	    flex-direction: column;
+	    flex: 1 1 0px;
 	}
     }
 }
@@ -126,7 +171,7 @@ body {
 	width: 100%;
 	margin-top: 0;
 	&:not(:has(.timestamp-wrapper)) {
-	    text-indent: 1rem;	    
+	    text-indent: 2rem;	    
 	}
     }
     div {
@@ -257,26 +302,20 @@ body {
     #content {
 	width: var(--width);
 	max-width: var(--max-width);	
-	box-shadow: 5px -5px 5px 0px rgba(0, 0, 0, 0.23);
 	margin: 2rem;
 	container-type: inline-size;
-	border-right: 1px solid lightgrey;
-	border-left: 1px solid lightgrey;
-	border-top: 0;
-	border-bottom: 0;
-	border-radius: 2rem;
-	overflow: hidden;
-	background-color: var(--content-bg-color);
 	align-items: center;
 	margin-top: -6rem;
 	flex-grow: 1;
 	#content-subcontainer {
 	    width: 100%;
+	    background-color: var(--content-bg-color);
 	    border: var(--content-border);
 	    border-left-width: 0;
 	    border-right-width: 0;
 	    border-radius: 2rem;
 	    flex-grow: 1;
+	    box-shadow: 5px -5px 5px 0px rgba(0, 0, 0, 0.23);
 
 	    div {
 		border: initial;
@@ -366,21 +405,29 @@ body {
 	    figure:has(img.content-image) {
 		margin: 0;
 	    }
-	    h1:has(.timestamp-wrapper) {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
+	    h2:has(.timestamp-wrapper) {
+		margin-top: 0;
+		margin-bottom: .5rem;
 	    }
 	    .timestamp-wrapper {
 		font-weight: normal;
-		margin-left: auto;
-		font-size: 1.2rem;
-		line-height: 1.2rem;
+		margin-left: -2rem;
+		display: inline-block;
+		padding: .5rem;
+		border: var(--content-border);
+		border-width: 2px;
+		border-left-width: 1rem;
+		border-top-right-radius: .5rem;
+		border-bottom-right-radius: .5rem;
+		border-top-color: black;
+		border-right-color: black;
+		border-bottom-color: black;
+		border-top-style: solid;
+		border-right-style: solid;
+		border-bottom-style: solid;
 		&::before {
 		    content: '\F293';
 		    margin-right: .5rem;
-		    display: inline-flex;
 		    align-items: center;
 		    font-family: bootstrap-icons !important;
 		    font-style: normal;
@@ -392,6 +439,11 @@ body {
 		    -webkit-font-smoothing: antialiased;
 		    -moz-osx-font-smoothing: grayscale;		    
 		}
+	    }
+	    figure {
+		margin: 0;
+		margin-bottom: 1rem;
+		figcaption { display: none; }
 	    }
 	}
     }
@@ -521,7 +573,12 @@ body {
 		    display: block;
 		    width: 100%;
 		    margin-right: initial;
-		}}
+		}
+		.timestamp-wrapper {
+		    margin-left: -1rem;
+		    margin-bottom: 1rem;
+		}
+	    }
 	}
     }
 }
