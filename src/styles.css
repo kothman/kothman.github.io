@@ -405,13 +405,24 @@ body {
 	    figure:has(img.content-image) {
 		margin: 0;
 	    }
-	    h2:has(.timestamp-wrapper) {
-		margin-top: 0;
-		margin-bottom: .5rem;
+	    /* Grab the first heading element in outline-2, if it has a timestamp wrapper */
+	    .outline-2:has(.timestamp-wrapper) > * {
+		display: flex;
+		flex-direction: row;
+		flex: 1 1 0px;
+		align-items: flex-end;
+		justify-content: space-between;
+		& > a {
+		    display: flex;
+		    flex-grow: 1;
+		}
+		.timestamp-wrapper {
+		    font-size: 1rem;
+		    line-height: 1rem;
+		}
 	    }
 	    .timestamp-wrapper {
 		font-weight: normal;
-		margin-left: -2rem;
 		display: inline-block;
 		padding: .5rem;
 		border: var(--content-border);
