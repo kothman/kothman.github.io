@@ -2,4 +2,8 @@
 #+HTML_HEAD_EXTRA: <style>#nav-blog a::after { width: 100% !important; }</style>
 
 * Blog @@html:<i class="bi bi-journals"></i>@@
-** [[./posts/how I made this website.org][How I made this website]]
+
+** [[./posts/why.org][Why do it that way, silly?]]
+**** <2024-11-23 Sat>
+
+
