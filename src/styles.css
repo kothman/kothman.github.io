@@ -421,6 +421,13 @@ body {
 		    line-height: 1rem;
 		}
 	    }
+	    p:has(+ .timestamp-pull-left) {
+		margin-bottom: 0;
+	    }
+	    .timestamp-pull-left {
+		display: inline-block;
+		margin-left: -2rem;
+	    }
 	    .timestamp-wrapper {
 		font-weight: normal;
 		display: inline-block;
@@ -450,10 +457,6 @@ body {
 		    -webkit-font-smoothing: antialiased;
 		    -moz-osx-font-smoothing: grayscale;		    
 		}
-		&.timestamp-pull-left {
-		    margin-left: -2rem;
-		}
-		
 	    }
 	    figure {
 		margin: 0;
@@ -589,9 +592,8 @@ body {
 		    width: 100%;
 		    margin-right: initial;
 		}
-		.timestamp-wrapper.timestamp-pull-left {
+		.timestamp-pull-left {
 		    margin-left: -1rem;
-		    margin-bottom: 1rem;
 		}
 	    }
 	}
