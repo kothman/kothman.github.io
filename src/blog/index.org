@@ -1,9 +1,16 @@
 #+SETUPFILE: ../html.setup
 #+HTML_HEAD_EXTRA: <style>#nav-blog a::after { width: 100% !important; }</style>
 
+# I'd like to create a src block here that, when evaluated, compiles all of my
+# selected blog posts (the ones that aren't drafts - maybe a separate folder?),
+# and builds the HTML for each post preview section.
+#+begin_src emacs-lisp
+
+#+end_src
+
 * Blog @@html:<i class="bi bi-journals"></i>@@
 
-** [[./posts/why.org][Why do it that way, silly?]]
-**** <2024-11-23 Sat>
+** [[./posts/why.org][Why do it that way, silly?]] <2024-11-23 Sat>
+
 
 
