@@ -3,7 +3,9 @@
 #+DATE: <2024-11-18 Mon>
 
 * Why do it that way, silly?
-**** <2024-11-23 Sat>
+@@html:<div class="timestamp-pull-left">@@
+<2024-11-23 Sat>
+@@html:</div>@@
 ** Welcome to my blog!
 
 This is an introductory post about why I made this website the way I did.
