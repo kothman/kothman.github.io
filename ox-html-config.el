@@ -258,6 +258,7 @@ holding export options."
    (org-html--build-meta-info info)
    (org-html--build-head info)
    (org-html--build-mathjax-config info)
+   "<meta name=\"google-site-verification\" content=\"UlPJ96VgMqyv81LWYYVPJazsv8Bchx8R0-xHfrKnJlg\" />\n"
    "</head>\n"
    "<body>\n"
    (let ((link-up (org-trim (plist-get info :html-link-up)))
