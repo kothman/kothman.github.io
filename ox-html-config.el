@@ -44,7 +44,7 @@ I'm not sure if org-mode's relative path building works for <head> html.")
   :options '(nil t))
 
 ;;; CHANGE ME IF NEEDED
-(setq export-for-dev t)
+(setq export-for-dev nil)
 
 ;;; Define the postable format for each language here
 (defvar my-org-html-postamble-html nil
