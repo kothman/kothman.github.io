@@ -1,3 +1,0 @@
-#+SETUPFILE: ../html.setup
-@@html:<style>#nav-services a::after { width: 100% !important; }</style>@@
-* Services @@html:<i class="bi bi-person-raised-hand"></i>@@

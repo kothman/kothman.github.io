@@ -1,0 +1,17 @@
+#+SETUPFILE: ../../html.setup
+#+HTML_HEAD_EXTRA: <style>#nav-blog a::after { width: 100% !important; }</style>
+#+DATE: <2025-06-11 Wed>
+
+* Using LaTex to Create my Resume
+@@html:<div class="timestamp-pull-left">@@
+<2024-11-23 Sat>
+@@html:</div>@@
+** Or, How I produce a PDF and webpage from a single text file.
+Have you ever thought to yourself, "I wish there was a more
+complicated way to make a resume"?
+
+Jokes aside, I recently decided to streamline the creation of my
+website and resume into a single workflow. Using Emacs, Org-Mode, and
+LaTex, I can store and edit my information in Org files (a note-taking format
+for text files) which then get automatically published upon saving.
+

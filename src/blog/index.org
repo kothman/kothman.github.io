@@ -10,7 +10,7 @@
 
 * Blog @@html:<i class="bi bi-journals"></i>@@
 
-** [[./posts/why.org][Why do it that way, silly?]] <2024-11-23 Sat>
+** [[./posts/how.org][Using LaTex to Create my Resume]] <2025-06-11 Wed>
 
 
 

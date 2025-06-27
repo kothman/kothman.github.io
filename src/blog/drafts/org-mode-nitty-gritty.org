@@ -1,3 +1,0 @@
-
-* Getting into the Nitty Gritty of Org-Mode
-And the function I had to modify to get my desired behavior.

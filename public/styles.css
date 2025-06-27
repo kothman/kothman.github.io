@@ -226,6 +226,9 @@ body {
 		    #nav-home a::before {
 			content: '\F776\00a0';
 		    }
+		    #nav-resume a::before {
+			content: '\F3B9\00a0'
+		    }
 		    #nav-resources a::before {
 			content: '\F467\00a0';
 		    }

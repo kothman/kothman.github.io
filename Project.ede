@@ -1,0 +1,15 @@
+;; Object kothman.github.io
+;; EDE Project Files are auto generated: Do Not Edit
+(ede-proj-project "kothman.github.io"
+  :file "Project.ede"
+  :name "kothman.github.io"
+  :targets
+  (list
+    (ede-proj-target-elisp "build"
+      :object-name "build"
+      :name "build"
+      :path ""))
+  :configurations '("debug" "release")
+  :object-name "kothman.github.io"
+  :makefile-type Makefile
+  :configuration-variables '("debug" (("DEBUG" . "1"))))
