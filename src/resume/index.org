@@ -62,7 +62,7 @@
  * Support students in setting up a Unix development environment using only the command line  
  * Learn new strategies for one-on-one and group instruction with a focus on simplifying complex ideas for beginners
 *** Lifeguard - YMCA (Muncie, IN; Bloomington, IN), IU Rec Sports, Circle Pines Center
-***** May 2011 - July 2015
+***** /May 2011 - July 2015/
  * Ensure the safety and well-being of patrons as a first responder
  * Participate in regular training to practice first aid, CPR/AED, and
    rescue techniques
