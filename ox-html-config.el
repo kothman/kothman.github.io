@@ -448,13 +448,18 @@ variable."
 	 :publishing-function org-html-publish-to-html
 	 :headline-levels 6
 	 :auto-preamble t)
+	("org-latex"
+	 :base-directory "~/src/kothman.github.io/src/resume/"
+	 :base-extension "org"
+	 :publishing-directory "~/src/kothman.github.io/public/resume/"
+	 :publishing-function org-latex-publish-to-pdf)
 	("org-static"
 	 :base-directory "~/src/kothman.github.io/src/"
 	 :base-extension "css\\|js\\|png\\|jpg\\|jpeg\\|gif\\|pdf"
 	 :publishing-directory "~/src/kothman.github.io/public/"
 	 :recursive t
 	 :publishing-function org-publish-attachment)
-	("org" :components ("org-notes" "org-static"))
+	("org" :components ("org-notes" "org-latex" "org-static"))
 	))
 
 (my-org-force-publish)
