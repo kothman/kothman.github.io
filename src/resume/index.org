@@ -23,7 +23,7 @@
 [[mailto:mari.morcant@gmail.com][mari.morcant@gmail.com]] - Kalamazoo, MI 49007
 ** _Experience_
 *** Gas Station Attendant - Meijer
-***** June 2025 - Present
+***** /June 2025 - Present/
  * Provide compassionate customer service with clear, accurate
    information, to ensure a welcoming and respectful environment
  * Maintain clean, safe, and well organized spaces, especially with
@@ -34,7 +34,7 @@
  * Manage incoming phone calls by answering inquiries or referring
    calls to the appropriate department
 *** Passport Acceptance Agent, Tech Intern - Kalamazoo Public Library
-***** November 2023 - May 2025
+***** /November 2023 - May 2025/
  * Conduct detailed reviews of and submit passport applications as a *Passport Acceptance Agent*
  * Maintain, fix, and add features to a previous intern's web app for managing 3D print requests, while learning to use a new programming language
  * Instruct and mentor coworkers in using, maintaining, calibrating, and repairing 3D printer equipment (prusa mk3s+, flashforge creator pro, bambu x1 carbon) and its associated software  
