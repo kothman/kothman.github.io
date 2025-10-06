@@ -15,10 +15,25 @@
 #+LATEX_HEADER: \setlist[itemize]{nosep}
 #+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
 #+HTML_HEAD_EXTRA: <style>p{text-indent:0rem!important;}h5{margin-bottom:.25rem;}</style>
+#+HTML_HEAD_EXTRA: <style>#nav-resume a::after { width: 100% !important; }</style>
 * Morgan Kothman
+#+BEGIN_EXPORT latex
+(812) 727-4927 -
+#+END_EXPORT
 [[mailto:mari.morcant@gmail.com][mari.morcant@gmail.com]] - Kalamazoo, MI 49007
 ** _Experience_
-*** Kalamazoo Public Library - Passport Acceptance Agent, Tech Intern
+*** Gas Station Attendant - Meijer
+***** June 2025 - Present
+ * Provide compassionate customer service with clear, accurate
+   information, to ensure a welcoming and respectful environment
+ * Maintain clean, safe, and well organized spaces, especially with
+   respect to chemical and food safety
+ * Handle transactions accurately and efficiently, paying a high level
+   of attention to detail within a fast-paced environment
+ * Verify accuracy and process paperwork for incoming deliveries
+ * Manage incoming phone calls by answering inquiries or referring
+   calls to the appropriate department
+*** Passport Acceptance Agent, Tech Intern - Kalamazoo Public Library
 ***** November 2023 - May 2025
  * Conduct detailed reviews of and submit passport applications as a *Passport Acceptance Agent*
  * Maintain, fix, and add features to a previous intern's web app for managing 3D print requests, while learning to use a new programming language
@@ -26,13 +41,13 @@
  * Provide support to patrons using public computers and other library tech services, like printing/copying/faxing, Microsoft Office, internet and email issues, and much more
  * Guide patrons in using software and hardware in the Idea Lab, such as film and audio digitization tools, Music Production Software, synthesizers and mics, and audio interfaces
  * Train new interns across all aspects of the job, like using Sirsi and its peripheral equipment
-*** Circle Pines Center - Volunteer - Event Host, Groundskeeper, Cook
+*** Volunteer, Event Host, Groundskeeper, Cook - Circle Pines Center
 ***** /August 2021 - March 2023/
  * Anticipate needs of retreat center guests from variety of backgrounds, to create a welcoming environment aligning with CPC’s mission to promote peace, social justice, environmental stewardship, and cooperation  
  * Lead and manage events cooperatively with colleagues  
  * Compassionately receive concerns from constituents and address with Executive Director  
  * Pursue new skills, such as roof repair, caring for goats, re-tiling an old farmhouse tea room, setting up a reverse osmosis system for maple syrup processing, and creating an interactive 3D model of the tea room
-*** FormAssembly, Remote Technical Support Specialist
+*** Technical Support Specialist - FormAssembly
 ***** /January 2015 - December 2016/
  * Provide exceptional support to customers working with online form building software to make data collection and management as smooth and effortless as possible, through email, chat, and video  
  * Resolve Enterprise issues relating to Single Sign On authentication services and HIPAA compliance, as well as hardware/software specific requests  
@@ -41,8 +56,17 @@
  * Assist with transition to new knowledge base software while continuing to update and create articles  
  * Maintain and further develop internal chrome extension to aid in speedy troubleshooting  
  * Perform critical testing for Enterprise HIPAA compliance during release of new product launch
-*** Indiana University, Bloomington - Undergraduate Assistant, Intro to Programming
+*** Undergraduate Assistant, Intro to Programming - Indiana University, Bloomington
 ***** /August 2012 - December 2012/
  * Develop a thorough understanding of introductory programming concepts to better guide non-programming majors studying web development  
  * Support students in setting up a Unix development environment using only the command line  
  * Learn new strategies for one-on-one and group instruction with a focus on simplifying complex ideas for beginners
+*** Lifeguard - YMCA (Muncie, IN; Bloomington, IN), IU Rec Sports, Circle Pines Center
+***** May 2011 - July 2015
+ * Ensure the safety and well-being of patrons as a first responder
+ * Participate in regular training to practice first aid, CPR/AED, and
+   rescue techniques
+ * Monitor the pool and nearby areas to proactively identify potential
+   hazards and safety issues
+ * Respond to distressed or injured patrons, providing an appropriate
+   level of care based on my training
