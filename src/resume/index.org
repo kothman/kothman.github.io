@@ -69,6 +69,7 @@
  * Lead and manage events cooperatively with colleagues  
  * Compassionately receive concerns from constituents and address with Executive Director  
  * Pursue new skills, such as roof repair, caring for goats, re-tiling an old farmhouse tea room, setting up a reverse osmosis system for maple syrup processing, and creating an interactive 3D model of the tea room
+#+LATEX: \newpage
 *** Technical Support Specialist - FormAssembly
 ***** /January 2015 - December 2017/
  * Provide exceptional support to customers working with online form building software to make data collection and management as smooth and effortless as possible, through email, chat, and video  
