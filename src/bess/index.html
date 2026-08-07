@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" class=""><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Days Till Bess</title>
+    
+    <style>
+    .container {
+        text-align: center;
+        display: inline-block;
+        padding: 1rem;
+        border: 1px solid black;
+        border-top-left-radius: 2rem;
+        background: lavender;
+        position: relative;
+    }
+    .container::after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        border: 1px solid black;
+        border-top: none;
+        border-right: none;
+        top: 0;
+        right: 0;
+        background: white;
+    }
+    </style>
+  </head>
+  <body style="text-align: center;">
+    <div class="container">
+    <h1>Days Till Bess</h1>
+    <h3 id="countdown">28</h3>
+</div>
+  
+
+<script>
+    const now = new Date();
+    const then = new Date("2026-08-18T18:00:00-04:00");
+    const days = Math.ceil((then.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+    document.getElementById("countdown").innerText = days.toString();
+</script></body></html>
