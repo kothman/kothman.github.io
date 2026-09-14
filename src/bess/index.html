@@ -66,9 +66,21 @@
 	  box-sizing: border-box;
       }
       @media screen and (max-width: 676px) {
+	  .calendar-page {
+	      padding-left: 0;
+	      padding-right: 0;
+	  }
 	  .calendar-page-day {
 	      height: 3rem;
 	      width: 3rem;
+	  }
+      }
+      @media screen and (max-width: 400px) {
+	  .calendar-page {
+	  }
+	  .calendar-page-day {
+	      height: 2.5rem;
+	      width: 2.5rem;
 	  }
       }
     </style>
