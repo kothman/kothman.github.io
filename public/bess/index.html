@@ -1,45 +1,132 @@
 <!DOCTYPE html>
-<html lang="en" class=""><head>
+<html lang="en" class="">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Days Till Bess</title>
-    
     <style>
-    .container {
-        text-align: center;
-        display: inline-block;
-        padding: 1rem;
-        border: 1px solid black;
-        border-top-left-radius: 2rem;
-        background: lavender;
-        position: relative;
-    }
-    .container::after {
-        content: '';
-        display: block;
-        position: absolute;
-        height: 20px;
-        width: 20px;
-        border: 1px solid black;
-        border-top: none;
-        border-right: none;
-        top: 0;
-        right: 0;
-        background: white;
-    }
+      body {
+	  margin: 0;
+	  background-color: thistle;
+      }
+      .calendar {
+	  max-width: 40rem;
+	  margin: auto;
+	  padding-top: 2rem;
+      }
+      .calendar-spirals {
+	  height: 2rem;
+      }
+      .calendar-page {
+	  border: 1px solid black;
+	  background-color: whitesmoke;
+	  padding: 2rem;
+          display: flex;
+          flex-direction: column;
+	  box-shadow: 0px 0px 12px 0px black;
+      }
+      .calendar-page-month {	      
+	  font-size: 2rem;
+	  text-transform: uppercase;
+	  text-align: center;
+      }
+      .calendar-page-days {
+          margin: 2rem auto;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          flex: 0 1 auto;
+          border: 4px solid cornflowerblue;
+	  border-radius: 4px;
+	  background-color: white;
+     }
+      .calendar-page-week {
+          &:first-child {
+              border-top: 1px solid gray;
+          }
+          margin: auto;
+	  border-left: 1px solid gray;
+          display: flex;
+          flex: 0 1 auto;
+	  border-bottom: 1px solid gray;
+      }
+      .calendar-page-day {
+	  padding: 2rem;
+	  display: flex;
+          flex: 0 1 auto;
+	  border-right: 1px solid gray;
+	  height: 5rem;
+	  width: 5rem;
+	  padding: .25rem;
+	  box-sizing: border-box;	  
+      }
     </style>
   </head>
-  <body style="text-align: center;">
+  <body>
     <div class="container">
-    <h1>Days Till Bess</h1>
-    <h3 id="countdown">28</h3>
-</div>
+      <div class="calendar">
+	<div class="calendar-spirals">
+	  <span class="calendar-spiral"></span>
+	  <span class="calendar-spiral"></span>
+	  <span class="calendar-spiral"></span>
+	  <span class="calendar-spiral"></span>
+	  <span class="calendar-spiral"></span>
+	</div>
+	<div class="calendar-page">
+	  <div class="calendar-page-month">October</div>
+	  <div class="calendar-page-days">
+	    <div class="calendar-page-week">
+	      <span class="calendar-page-day"></span>
+	      <span class="calendar-page-day"></span>
+	      <span class="calendar-page-day"></span>
+	      <span class="calendar-page-day"></span>
+	      <span class="calendar-page-day">1</span>
+	      <span class="calendar-page-day">2</span>
+	      <span class="calendar-page-day">3</span>
+	    </div>
+	    <div class="calendar-page-week">
+	      <span class="calendar-page-day">4</span>
+	      <span class="calendar-page-day">5</span>
+	      <span class="calendar-page-day">6</span>
+	      <span class="calendar-page-day">7</span>
+	      <span class="calendar-page-day">8</span>
+	      <span class="calendar-page-day">9</span>
+	      <span class="calendar-page-day">10</span>
+	    </div>
+	    <div class="calendar-page-week">
+	      <span class="calendar-page-day">11</span>
+	      <span class="calendar-page-day">12</span>
+	      <span class="calendar-page-day">13</span>
+	      <span class="calendar-page-day">14</span>
+	      <span class="calendar-page-day">15</span>
+	      <span class="calendar-page-day">16</span>
+	      <span class="calendar-page-day">17</span>
+	    </div>
+	    <div class="calendar-page-week">
+	      <span class="calendar-page-day">18</span>
+	      <span class="calendar-page-day">19</span>
+	      <span class="calendar-page-day">20</span>
+	      <span class="calendar-page-day">21</span>
+	      <span class="calendar-page-day">22</span>
+	      <span class="calendar-page-day">23</span>
+	      <span class="calendar-page-day">24</span>
+	    </div>
+	    <div class="calendar-page-week">
+	      <span class="calendar-page-day">25</span>
+	      <span class="calendar-page-day">26</span>
+	      <span class="calendar-page-day">27</span>
+	      <span class="calendar-page-day">28</span>
+	      <span class="calendar-page-day">29</span>
+	      <span class="calendar-page-day">30</span>
+	      <span class="calendar-page-day">31</span>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
+    <script>
+    </script>
+  </body>
   
-
-<script>
-    const now = new Date();
-    const then = new Date("2026-08-18T18:00:00-04:00");
-    const days = Math.ceil((then.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
-    document.getElementById("countdown").innerText = days.toString();
-</script></body></html>
+</html>
