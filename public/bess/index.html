@@ -10,8 +10,12 @@
 	  margin: 0;
 	  background-color: thistle;
       }
+      .container {
+	  padding: 0 1rem;
+      }
       .calendar {
-	  max-width: 40rem;
+	  width: 40rem;
+	  max-width: 100%;
 	  margin: auto;
 	  padding-top: 2rem;
       }
@@ -59,7 +63,13 @@
 	  height: 5rem;
 	  width: 5rem;
 	  padding: .25rem;
-	  box-sizing: border-box;	  
+	  box-sizing: border-box;
+      }
+      @media screen and (max-width: 676px) {
+	  .calendar-page-day {
+	      height: 3rem;
+	      width: 3rem;
+	  }
       }
     </style>
   </head>
