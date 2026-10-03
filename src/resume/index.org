@@ -25,8 +25,8 @@
 *** Medical Assistant - Planned Parenthood of Michigan
 ***** /November 2025 - Present/
  * Maintained accurate patient records and efficiently entered data
-   into electronic health record (EHR) systems while supporting
-   patient access and demand goals
+   into electronic health record systems while supporting
+   patient access
  * Greeted patients, managed check-in processes, verified insurance
    coverage, and obtained health plan authorizations to ensure
    seamless front-office operations
@@ -72,13 +72,22 @@
 #+LATEX: \newpage
 *** Technical Support Specialist - FormAssembly
 ***** /January 2015 - December 2017/
- * Provide exceptional support to customers working with online form building software to make data collection and management as smooth and effortless as possible, through email, chat, and video  
- * Resolve Enterprise issues relating to Single Sign On authentication services and HIPAA compliance, as well as hardware/software specific requests  
- * Quickly onboard while becoming an expert on vast array of software and third-party data processing  
- * Investigate and document bugs, relaying updates and information to relevant parties  
- * Assist with transition to new knowledge base software while continuing to update and create articles  
- * Maintain and further develop internal chrome extension to aid in speedy troubleshooting  
- * Perform critical testing for Enterprise HIPAA compliance during release of new product launch
+ * Provide exceptional support to customers working with online form
+   building software to make data collection and management as smooth
+   and effortless as possible, through email, chat, and video
+ * Resolve Enterprise issues relating to Single Sign On authentication
+   services and HIPAA compliance, as well as hardware/software
+   specific requests
+ * Quickly onboard while becoming an expert on vast array of software
+   and third-party data processing
+ * Investigate and document bugs, relaying updates and information to
+   relevant parties
+ * Assist with transition to new knowledge base software while
+   continuing to update and create articles
+ * Maintain and further develop internal chrome extension to aid in
+   speedy troubleshooting
+ * Perform critical testing for Enterprise HIPAA compliance during
+   release of new product launch
 *** Undergraduate Assistant, Intro to Programming - Indiana University, Bloomington
 ***** /August 2012 - December 2012/
  * Develop a thorough understanding of introductory programming concepts to better guide non-programming majors studying web development  
