@@ -12,7 +12,8 @@ Kalamazoo, from November 10th, 2025, through September 21st 2026. I
 quit because I did not see improvements related to my concerns, and
 did not feel supported at this job. I was passed up for promotions due
 to speaking out against retaliation and abusive behavior, and was
-given empty promises by my union representatives when I tried taking action.
+given empty promises by my union representatives when I tried taking
+action.
 
 Noe Giorgio, assistant manager of this location, is an alcoholic who
 talks more fondly of going to the bar than his own kids, and bragged
@@ -66,5 +67,5 @@ miss getting to work with so many wonderful health professionals while
 providing essential community services. I won't miss being scared to
 come to work every day.
 
-@@html:<img src="../../images/me-ppmi.jpg" alt="Me, sitting on a couch in a blue PPMI hoodie.">@@
+@@html:<img style="display: block;" src="../../images/me-ppmi.jpg" alt="Me, sitting on a couch in a blue PPMI hoodie.">@@
 
