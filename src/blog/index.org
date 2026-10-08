@@ -10,7 +10,7 @@
 
 * Blog @@html:<i class="bi bi-journals"></i>@@
 
-** [[./posts/ppmi/][Working at Planned Parenthood of Michigan in Kalamazoo]] <2026-10-06 Tue>
+** [[./posts/ppmi.html][Working at Planned Parenthood of Michigan in Kalamazoo]] <2026-10-06 Tue>
 
 
 
