@@ -1,7 +1,7 @@
 #+AUTHOR: Morgan Kothman
 #+TITLE: Resume
 #+DESCRIPTION: Morgan Kothman's Resume
-#+DATE: <2025-06-09 Mon>
+#+DATE: <2026-10-08 Thu>
 #+EMAIL: mari.morcant@gmail.com
 # EXPORT_FILE_NAME: Kothman_Resume_[COMPANY_NAME]
 #+OPTIONS: \n:nil
@@ -23,24 +23,24 @@
 [[mailto:mari.morcant@gmail.com][mari.morcant@gmail.com]] - Kalamazoo, MI 49007
 ** _Experience_
 *** Medical Assistant - Planned Parenthood of Michigan
-***** /November 2025 - Present/
- * Maintained accurate patient records and efficiently entered data
+***** /November 2025 - September 2025/
+ * Maintain accurate patient records and efficiently enter data
    into electronic health record systems while supporting
    patient access
- * Greeted patients, managed check-in processes, verified insurance
-   coverage, and obtained health plan authorizations to ensure
+ * Greet patients, manage check-in processes, verify insurance
+   coverage, and obtain health plan authorizations to ensure
    seamless front-office operations
- * Assessed patient financial eligibility for assistance programs,
-   collected fees, and recorded billing transactions in accordance
-   with cash handling policies
- * Prepared patients for exams and procedures, assisted clinicians
-   during care, and provided education on pain management options
- * Delivered unbiased, factual patient education on pregnancy options,
+ * Assess patient financial eligibility for assistance programs,
+   collect fees, and record billing transactions in accordance with
+   cash handling policies
+ * Prepare patients for exams and procedures, assist clinicians
+   during care, and provide education on pain management options
+ * Deliver unbiased, factual patient education on pregnancy options,
    birth control methods, sexually transmitted infections, and other
-   health services, screening for coercion and referring to external
+   health services, while screening for coercion and referring to external
    resources as needed
- * Dispensed medications and supplies under clinician direction, and
-   managed lab specimen preparation, requisitions, and transport logs
+ * Dispense medications and supplies under clinician direction, and
+   manage lab specimen preparation, requisitions, and transport logs
 # *** Gas Station Attendant - Meijer
 # ***** /June 2025 - November 2025/
 #  * Provide compassionate customer service with clear, accurate
@@ -54,7 +54,7 @@
 #    calls to the appropriate department
 *** Passport Acceptance Agent, Tech Intern - Kalamazoo Public Library
 ***** /November 2023 - May 2025/
- * Conduct detailed reviews of and submit passport applications as a *Passport Acceptance Agent*
+ * Conduct detailed reviews of and submit passport applications as a Passport Acceptance Agent
  * Maintain, fix, and add features to a previous intern's web app for managing 3D print requests, while learning to use a new programming language
  * Instruct and mentor coworkers in using, maintaining, calibrating, and repairing 3D printer equipment (prusa mk3s+, flashforge creator pro, bambu x1 carbon) and its associated software  
  * Provide support to patrons using public computers and other library tech services, like printing/copying/faxing, Microsoft Office, internet and email issues, and much more
