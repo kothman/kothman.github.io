@@ -23,7 +23,7 @@
 [[mailto:mari.morcant@gmail.com][mari.morcant@gmail.com]] - Durham, NC 27701
 ** _Experience_
 *** Medical Assistant - Planned Parenthood of Michigan
-***** /November 2025 - September 2025/
+***** /November 2025 - September 2026/
  * Maintain accurate patient records and efficiently enter data
    into electronic health record systems while supporting
    patient access
@@ -60,13 +60,18 @@
  * Provide support to patrons using public computers and other library tech services, like printing/copying/faxing, Microsoft Office, internet and email issues, and much more
  * Guide patrons in using software and hardware in the Idea Lab, such as film and audio digitization tools, Music Production Software, synthesizers and mics, and audio interfaces
  * Train new interns across all aspects of the job, like using Sirsi and its peripheral equipment
+
+
+ #+LATEX: \newpage
+
+
 *** Volunteer, Event Host, Groundskeeper, Cook - Circle Pines Center
 ***** /August 2021 - March 2023/
  * Anticipate needs of retreat center guests from variety of backgrounds, to create a welcoming environment aligning with CPC’s mission to promote peace, social justice, environmental stewardship, and cooperation  
  * Lead and manage events cooperatively with colleagues  
  * Compassionately receive concerns from constituents and address with Executive Director  
  * Pursue new skills, such as roof repair, caring for goats, re-tiling an old farmhouse tea room, setting up a reverse osmosis system for maple syrup processing, and creating an interactive 3D model of the tea room
-#+LATEX: \newpage
+
 *** Cashier, Truck Receiver - Bozeman Food Co-op
 ***** /March 2018 - September 2018/
  * Provide friendly, attentive, and knowledgeable customer service
@@ -104,3 +109,8 @@
    hazards and safety issues
  * Respond to distressed or injured patrons, providing an appropriate
    level of care based on my training
+
+** _Education_
+*** Computer Science - Indiana University, Bloomington
+***** August 2012 - December 2013
+ * Direct admission to the School of Informatics and Computing as one of fifty

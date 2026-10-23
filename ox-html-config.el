@@ -34,7 +34,7 @@ Scripts in determining if the saved-buffer should trigger recompilation.")
     ("resume" . "/resume/")
     ("blog" . "/blog/")))
 
-(defvar base-url nil
+(defvar BASE-URL nil
   "The base url value to be used when building links.
 I'm not sure if org-mode's relative path building works for <head> html.")
 (defcustom export-for-dev nil
@@ -73,18 +73,18 @@ I'm not sure if org-mode's relative path building works for <head> html.")
     (if build-for-prod
 	(setq export-for-dev nil)
       (setq export-for-dev t))
-    (my-update-base-url)
+    (my-update-BASE-URL)
    (my-org-force-publish)
     (setq export-for-dev prev-export-for-dev)))
-(defun my-update-base-url ()
+(defun my-update-BASE-URL ()
   "Update MY-BASE-URL based on MY-EXPORT FOR DEV."
   (interactive)
   (if export-for-dev
-      (setq base-url "file:///home/kothman/src/kothman.github.io/public")
-    (setq base-url "https://kothman.github.io")))
+      (setq BASE-URL "file:///home/kothman/src/kothman.github.io/public")
+    (setq BASE-URL "https://kothman.github.io")))
 
 
-(my-update-base-url) ; call this once on load
+(my-update-BASE-URL) ; call this once on load
 
 
 ;;; Helper functions for publishing the project
@@ -131,7 +131,7 @@ I'm not sure if org-mode's relative path building works for <head> html.")
 (defvar my-org-nav-item-template)
 (setq my-org-nav-item-template
       (concat "<li id=\"nav-%s\"><a href=\""
-	      base-url
+	      BASE-URL
 	      "%s"
 	      (when export-for-dev "index.html")
 	      "\">%s</a></li>"))
@@ -148,7 +148,7 @@ I'm not sure if org-mode's relative path building works for <head> html.")
   (let ((formatted-item nil)
 	(inside-html
 	 (concat "<li><a href=\""
-		 base-url
+		 BASE-URL
 		 (when export-for-dev "/index.html")
 		 "\"><h1>%t</h1><h3>%s</h3></a>")))
     
@@ -411,7 +411,7 @@ variable."
       `(("en" ,my-org-html-postamble-html)))
 ;;; Include stylesheet in the head
 (setq org-html-head
-      (concat "<link rel=\"stylesheet\" href=\"" base-url "/styles.css?busted=" (format-time-string "%s") "\">"
+      (concat "<link rel=\"stylesheet\" href=\"" BASE-URL "/styles.css?busted=" (format-time-string "%s") "\">"
 			    "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css\">"))
 (setq org-html-head-extra
  "<!-- don't forget to (use-package package-name :ensure t)date me in each org file with the active nav item! -->")
