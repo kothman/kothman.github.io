@@ -17,7 +17,44 @@ body {
     background-color: #6495eda3;
 }
 
+.hide-me {
+    transition: all ease-in-out .5s !important;
+    transform: scale(0.0) !important;
+    opacity: 0 !important;
+}
+.upsize-me {
+    transition: all ease-in-out .2s;
+    transform: scale(1.1);
+}
+
+.spin-me {
+    animation-name: spin;
+    animation-duration: 200ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+.skadoosh-left-a-little {
+    transition: all ease .5s;
+    transform: translateX(-20rem);
+}
+
+.skadoosh-right {
+    transition: all ease 1s;
+    transform: translateX(200rem);    
+}
+
 #welcome {
+    opacity: 1;
     position: relative;
     border: 2px solid black;
     margin: 0 auto;
