@@ -17,6 +17,43 @@ body {
     background-color: #6495eda3;
 }
 
+.desktop-menubar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: pink;
+    border-bottom: 3px double black;
+    padding: 0 1rem;
+    .desktop-menubar-limit-width {
+	display: flex;
+	flex-direction: row;
+	max-width: 40rem;
+	width: 100%;
+	justify-content: space-between;
+    }
+    .desktop-icon-group {
+	display: flex;
+	flex-direction: row;
+    }
+    #desktop-go-icon {
+	background-color: #a2ffa2;
+	&:hover { background-color: mediumspringgreen;}
+	&:active { background-color: springgreen;}
+    }
+    .desktop-icon {
+	padding: .15rem .3rem;
+	margin: .5rem;
+	border: 1px solid black;
+	background-color: #c9e8ff;
+	cursor: pointer;
+	box-shadow: -2px -2px 0px 0px black;
+	&:hover {
+	    background-color: cornflowerblue;
+	}
+	&:active {background-color: #307aff;}
+    }
+}
+
 .hide-me {
     transition: all ease-in-out .5s !important;
     transform: scale(0.0) !important;
@@ -91,7 +128,7 @@ body {
 	    line-height: .85rem;
 	    text-align: center;
 	    cursor: pointer;
-	    &:active {
+	    &:active, &:hover {
 		background: hotpink;
 	    }
 	}
@@ -114,7 +151,7 @@ body {
 	box-shadow: 4px 4px 0px 0px #1E1E1E;
 	cursor: pointer;
     }
-    #welcome-ok:active {
+    #welcome-ok:active, #welcome-ok:hover {
 	background-color: mediumspringgreen;
     }
 }
