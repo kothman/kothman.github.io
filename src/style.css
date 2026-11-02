@@ -9,6 +9,17 @@ body {
     width: 100dvw;
 }
 
+.btn-effects {
+    transition: all ease-in .1s;
+    &:hover {
+	transform: scale(.95);
+    }
+    &:active {
+	transform: scale(.90);
+    }
+
+}
+
 .body-container {
     width: 100dvw;
     height: 100dvh;
@@ -55,7 +66,9 @@ body {
 	&:hover {
 	    background-color: cornflowerblue;
 	}
-	&:active {background-color: #307aff;}
+	&:active {
+	    background-color: #307aff;
+	}
     }
 }
 
