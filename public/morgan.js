@@ -2,6 +2,9 @@ let m = document;
 m.qsa = m.querySelectorAll;
 m.bid = m.getElementById;
 
+let isBlogOpen = false;
+let blogEl = false;
+
 function getColor(){ 
     return getRandomPastelColor();
 }
@@ -88,6 +91,47 @@ function spark_joy() {
     }, 10);
 }
 
+function create_dialog(title, content, btn_arr = []) {
+    let el = m.bid("dialog-base-el").cloneNode(true);
+    el.removeAttribute("id");
+    el.removeAttribute("style");
+    el.querySelectorAll("button.titlebar-button").forEach((e) => {
+	e.addEventListener("click", () => {
+	    bloop_big_small(el);
+	    if (title == "blog") {
+		blogEl = false;
+		isBlogOpen = false;
+	    }
+	    
+	});	
+    });
+    el.querySelector(".titlebar-title").innerText = title;
+    el.querySelector(".dialog-content-container div").innerText = content;
+    let btn = el.querySelector(".ok-button");
+    if (btn_arr.length == 0)
+	btn.remove();
+    btn_arr.forEach((e, i) => {
+	if(i==0){
+	    // update text and add cb
+	    btn.innerText = e.text;
+	    btn.style.backgroundColor=e.backgroundColor;
+	    btn.addEventListener("click", () => {
+		e.cb(el);
+	    });
+	} else {
+	    let clone = btn.cloneNode();
+	    clone.innerText = e.text;
+	    clone.style.backgroundColor=e.backgroundColor;
+	    clone.addEventListener("click", () => {
+		e.cb(el);
+	    });
+	    el.querySelector(".dialog-content-container").appendChild(clone);
+	}
+    });
+    m.bid("main-content").appendChild(el);
+    return el;
+}
+
 function ok_welcome(e) {
     console.log("ok welcome");
     spark_joy();
@@ -99,10 +143,32 @@ function close_welcome(e) {
     bloop_big_small(welcome_e);
 }
 
+function button(txt, callback = () => {}) {
+    return {
+	text: txt,
+	cb: callback,
+	backgroundColor: getColor()
+    }
+}
+
+function open_blog() {
+    isBlogOpen = !isBlogOpen;
+    if (isBlogOpen) {
+	if (!blogEl) {
+	    blogEl = create_dialog("blog", "these are my blog posts");
+	}
+	blogEl.style.transform = "scale(1)";
+    } else {
+	    blogEl.style.transform = "scale(0)";
+    }
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOMContentLoaded");
     m.bid("welcome-ok").addEventListener("click", ok_welcome);
     m.bid("close-ok").addEventListener("click", close_welcome);
+    m.bid("desktop-go-icon").addEventListener("click", () => {
+	create_dialog("home", "i haven't put anything here yet...", [button("oh", bloop_big_small), button("ok", bloop_big_small)]);
+    });
     console.log("added event listeners");
 });

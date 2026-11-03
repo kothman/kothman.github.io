@@ -1,23 +1,64 @@
+@font-face {
+    font-family: 'IndieFlower';
+    src: url('fonts/IndieFlower-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: sway;
+}
+
+@font-face {
+    font-family: 'Roundex';
+    src: url('fonts/RoundexRegular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: sway;
+}
+
+@font-face {
+    font-family: 'Borel';
+    src: url('fonts/Borel-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: sway;
+}
+
 * {
     box-sizing: border-box;
 }
-
 body {
     margin: 0;
     padding: 0;
     height: 100dvh;
     width: 100dvw;
+    font-family: 'IndieFlower', sans-serif;
+}
+
+button {
+    font-family: inherit;
+    font-size: 1rem;
 }
 
 .btn-effects {
     transition: all ease-in .1s;
     &:hover {
-	transform: scale(.95);
+	transform: scale(1.06);
     }
     &:active {
-	transform: scale(.90);
+	transform: scale(.96);
     }
 
+}
+
+.boxshadow-effects {
+    transition: all ease-in .1s;
+    box-shadow: 2px 2px 0px 0px #222;
+	&:hover {
+	    box-shadow: 2px 2px 0px 0px #111;
+	}
+	&:active {
+	    box-shadow: 2px 2px 0px 0px black;
+	}
+    
 }
 
 .body-container {
@@ -65,12 +106,14 @@ body {
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	box-shadow: -2px -2px 0px 0px black;
+	box-shadow: 2px 2px 0px 0px #222;
 	&:hover {
 	    background-color: cornflowerblue;
+	    box-shadow: 2px 2px 0px 0px #111;
 	}
 	&:active {
 	    background-color: #307aff;
+	    box-shadow: 2px 2px 0px 0px black;
 	}
     }
 }
@@ -111,12 +154,21 @@ body {
     transform: translateX(200rem);    
 }
 
-#welcome {
+#main-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+#welcome, .dialog {
+    margin: .25rem;
     opacity: 1;
     position: relative;
     border: 2px solid black;
-    margin: 0 auto;
-    margin-top: 2rem;
     max-width: 100%;
     width: 20rem;
     display: flex;
@@ -124,6 +176,7 @@ body {
     flex-shrink: 1;
     background-color: white;
     box-shadow: 5px 5px 0px 0px #1E1E1E;
+    transition: all ease-in-out .4s;
     .titlebar {
 	/* position: absolute; */
 	/* top: 0; */
@@ -139,6 +192,7 @@ body {
 	align-items: center;
 	.titlebar-title {
 	    font-weight: bold;
+	    font-family: IndieFlower, serif;
 	}
 	.titlebar-button {
 	    width: 1.5rem;
@@ -155,26 +209,27 @@ body {
 	    }
 	}
     }
-    .caption {
-	font-weight: bold;
-	font-size: 1.2rem;
+    .dialog-content {
+	font-family: Borel, serif;
+	font-size: .8rem;
+	line-height: .8rem;
     }
-    #welcome-ok-container {
+    #welcome-ok-container, .dialog-content-container {
 	justify-content: space-between;
 	align-items: flex-end;
 	padding: 1rem;
     }
-    #welcome-ok {
+    #welcome-ok, .ok-button {
+	font-family: IndieFlower, sans-serif;
 	margin-left: 1rem;
 	padding: .25rem .75rem;
 	background-color: lightgoldenrodyellow;
 	border-radius: 0px;
 	border: 1px solid black;
-	box-shadow: 4px 4px 0px 0px #1E1E1E;
 	cursor: pointer;
 	white-space: nowrap;
     }
-    #welcome-ok:active, #welcome-ok:hover {
+    #welcome-ok:active, #welcome-ok:hover, .ok-button:active, .ok-button:hover {
 	background-color: mediumspringgreen;
     }
 }
